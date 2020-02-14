@@ -1,0 +1,11 @@
+安装node.js和npm：
+	sudo apt-get install nodejs
+	sudo apt-get install npm
+切换镜像源：
+	查看当前镜像源
+		npm get registry 
+	设成淘宝的
+		npm config set registry http://registry.npm.taobao.org/
+	换成原来的
+		npm config set registry https://registry.npmjs.org/
+

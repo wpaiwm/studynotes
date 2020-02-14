@@ -1,0 +1,17 @@
+1.镜像配置
+	<mirror>
+		<id>nexus-aliyun</id>
+		<name>nexus-aliyun</name>
+		<url>http://maven.aliyun.com/nexus/content/groups/public</url>
+		<mirrorOf>central</mirrorOf>
+	</mirror>
+把上面的代码加入maven settingx.xml中的<mirrors></mirrors>下就可以了
+2.maven命令的参数
+	-D 传入属性参数 
+	-P 使用pom中指定的配置 
+	-e 显示maven运行出错的信息 
+	-o 离线执行命令,即不去远程仓库更新包 
+	-X 显示maven允许的debug信息 
+	-U 强制去远程参考更新snapshot包
+ 
+		

@@ -1,0 +1,298 @@
+安装ubuntu桌面：
+	sudo apt-get install xinit
+	sudo apt-get install gdm  ( 登陆窗口，用于管理账户登陆的，还可以用来切换别的桌面环境。 )
+	sudo apt-get install ubuntu-desktop 
+	shutdown -r now (重启操作，不行服务器重启)
+查看unbuntu版本：
+	cat /etc/issue
+软件源替换：
+	sudo cp /etc/apt/sources.list /etc/apt/sources.list.backup
+	vi /etc/apt/sources.list
+	deb http://archive.ubuntu.com/ubuntu/ gutsy main restricted universe multiverse	
+	deb http://archive.ubuntu.com/ubuntu/ gutsy-security main restricted universe multiverse
+	deb http://archive.ubuntu.com/ubuntu/ gutsy-updates main restricted universe multiverse
+	deb http://archive.ubuntu.com/ubuntu/ gutsy-proposed main restricted universe multiverse
+	deb http://archive.ubuntu.com/ubuntu/ gutsy-backports main restricted universe multiverse
+	deb-src http://archive.ubuntu.com/ubuntu/ gutsy main restricted universe multiverse
+	deb-src http://archive.ubuntu.com/ubuntu/ gutsy-security main restricted universe multiverse
+	deb-src http://archive.ubuntu.com/ubuntu/ gutsy-updates main restricted universe multiverse
+	deb-src http://archive.ubuntu.com/ubuntu/ gutsy-proposed main restricted universe multiverse
+	deb-src http://archive.ubuntu.com/ubuntu/ gutsy-backports main restricted universe multiverse
+	deb http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe multiverse
+	deb http://mirrors.aliyun.com/ubuntu/ trusty-security main restricted universe multiverse
+	deb http://mirrors.aliyun.com/ubuntu/ trusty-updates main restricted universe multiverse
+	deb http://mirrors.aliyun.com/ubuntu/ trusty-proposed main restricted universe multiverse
+	deb http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted universe multiverse
+	deb-src http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe multiverse
+	deb-src http://mirrors.aliyun.com/ubuntu/ trusty-security main restricted universe multiverse
+	deb-src http://mirrors.aliyun.com/ubuntu/ trusty-updates main restricted universe multiverse
+	deb-src http://mirrors.aliyun.com/ubuntu/ trusty-proposed main restricted universe multiverse
+	deb-src http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted universe multiverse
+apt参数：
+	apt-get install xxx 安装xxx  。如果带有参数，那么-d 表示仅下载 ，-f 表示强制安装  
+	apt-get remove xxx 卸载xxx  
+	apt-get update 更新软件信息数据库  
+	apt-get upgrade 进行系统升级  
+	apt-cache search 搜索软件包
+unbuntu安装包默认存储位置：
+	/var/cache/apt/archives
+dpkg安装软件的方式:
+	dpkg -i package.deb 	安装包
+	dpkg -r package 	删除包
+	dpkg -P package 	删除包（包括配置文件）
+	dpkg -L package 	列出与该包关联的文件
+	dpkg -l package 	显示该包的版本
+	dpkg –unpack package.deb 	解开 deb 包的内容
+	dpkg -S keyword 	搜索所属的包内容
+	dpkg -l 	列出当前已安装的包
+	dpkg -c package.deb 	列出 deb 包的内容
+	dpkg –configure package 	配置包
+安装ssh的命令：
+	sudo apt-get install -y openssh-server
+	sudo apt-get install ufw
+	sudo ufw enable
+	sudo ufw allow 22
+安装网络命令工具:
+	sudo apt install net-tools
+查看系统服务命令：
+	sudo service --status-all
+查看端口状态及占用程序
+	sudo netstat -ntulp|grep 3306 n表示不进行dns查询，t表示tcp程序，u表示udp协议，p表示正在使用的程序，l表示正在监听的程序
+怎么将rpm格式的文件转成deb文件：
+	sudo apt-get install alien
+	sudo alien xxx.rpm
+自动清除rc配置文件：
+	dpkg -l |grep ^rc|awk '{print $2}' |sudo xargs dpkg -P
+非常有用的清理命令：
+	sudo apt-get autoclean              清理旧版本的软件缓存
+	sudo apt-get clean                  清理所有软件缓存
+	sudo apt-get autoremove             删除系统不再使用的孤立软件
+安装播放器：
+	sudo apt-get install smplayer
+Mysql的一些命令：
+	CREATE USER 'dog'@'localhost' IDENTIFIED BY '123456';
+	CREATE USER 'pig'@'192.168.1.101_' IDENDIFIED BY '123456';
+	CREATE USER 'pig'@'%' IDENTIFIED BY '123456';
+	CREATE USER 'pig'@'%' IDENTIFIED BY '';
+	CREATE USER 'pig'@'%';
+	GRANT privileges ON databasename.tablename TO 'username'@'host'
+	GRANT SELECT, INSERT ON test.user TO 'pig'@'%';
+	GRANT ALL ON *.* TO 'pig'@'%';
+	GRANT ALL ON maindataplus.* TO 'pig'@'%';
+	SET PASSWORD FOR 'pig'@'%' = PASSWORD("123456");
+	REVOKE SELECT ON *.* FR @OM 'pig'@'%';
+	Delete FROM user Where User='test' and Host='localhost';
+	update mysql.user set password=password('ÐÂÃÜÂë') where User="test" and Host="localhost";
+	mysqldump -u root -p restaurant >wp.sql
+	mysql -h 139.199.215.43 -P 10138 -uroot -pAiwm0109
+	select user,plugin from user;
+	skip-grant-table
+	update user set authentication_string=password("ln122920"),plugin='mysql_native_password' where user='root';
+	sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
+ifconfig配置ip：
+设置服务开机自启动：
+	systemctl 服务名 enable
+	systemctl 服务名 disable
+zip的解压和压缩：
+	zip 文件名.zip 要压缩的文件1 要压缩的文件2 要压缩的文件3
+	zip -d myfile.zip smart.txt 删除压缩文件中smart.txt文件
+	zip -m myfile.zip ./rpm_info.txt 向压缩文件中myfile.zip中添加rpm_info.txt文件
+	uzip file.zip 解压文件
+	unzip -v file.zip 只查看文件里的目录，但不要解压
+	unzip -n file.zip -d /home/ubuntu/yasuo 不覆盖原来的文件并把文件解压到指定的文件夹下
+tar进行打包：
+	tar -cf filename.tar file1 file2 file3 创建名为filename.tar的文件
+	tar -tf filename.tar  查看打包文件里的内容
+	tar -xf filename.tar 	抽取打包文件的内容
+	tar -zcf filename.gz.tar 以gzip格式压缩文件并打包
+gzip压缩：
+	gzip -d finame 解压文件
+ubuntu配置静态ip：
+	vim /etc/network/interfaces
+	auto enp0s25
+	iface enp0s25 inet static
+	address 172.20.32.230
+	netmask 255.255.255.0
+	gateway 172.20.32.1
+	sudo ifconfig enp0s25 down
+	sudo ifup ep0s25 
+由静态ip转成动态ip：
+	sudo ifdown enp0s25 
+	sudo ifconfig enp0s25 up
+ubuntu配置dns服务器
+	vim /etc/resolv.conf
+	nameserver 172.16.0.10
+	nameserver 172.16.0.11
+ 	nameserver 172.16.0.12
+	vim /etc/systemd/resolved.conf
+	修改DNS=dns地址
+我的mac地址：
+	c8:5b:76:12:06:81
+wumei的mac地址：	
+	54:AB:3A:84:14:92		 
+网络服务所在的位置：
+	/etc/init.d/networking 
+	重启它用 /etc/init.d/networking 就可以了
+更改mac地址：
+	ifconfig eth0 hw ether xx:xx:xx:xx:xx:xx
+	arp -i eth0 -s xxx.xxx.xxx.xxx(IP) xx.xx.xx.xx.xx(MAC)
+ubuntu jdk路径配置：
+	export JAVA_HOME=/usr/lib/jdk1.8.0_211
+	export JRE_HOME=${JAVA_HOME}/jre
+	export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
+	export PATH=${JAVA_HOME}/bin:$PATH
+jdk 放置的路径：
+	/usr/lib
+eclispe 包放置的路径
+	/opt
+eclispe 桌面图标放置的路径：
+	/usr/share/applications
+eclispe 配置方法
+	图标配置
+		Desktop Entry]
+			Encoding=UTF-8
+			Name=Eclipse
+			Comment=Eclipse
+			Exec=/opt/eclipse/eclipse
+			Icon=/opt/eclipse/icon.xpm
+			Terminal=false
+			StartupNotify=true
+			Type=Application
+			Categories=Application;Development;
+	jre配置
+		ln -s /usr/lib/jdk jre 
+		rm -rf jre //删除jre软连接，不要带斜扛‘/’，带斜杆会把原来的bin文件也给删了
+虚拟环境的使用
+	virtualenv scrapingEnv 创建虚拟环境
+	cd scrapingEnv/	
+	source bin/activate 激活虚拟环境
+	deactivate 退出虚拟环境
+硬盘挂载：
+	列出硬盘对象 sudo fdisk -l
+	格式化硬盘 sudo mkfs -t ext4 /dev/sda4
+	挂载硬盘 mount /dev/sda4 /home/wp/baidunetdiskdownload
+	改硬盘的名字 e2label /dev/sda4 baidunetdisk
+	设置自动挂载 sudo vim /etc/fstab 在行尾添加 /dev/sda4 /home/wp/ubuntu/baidunetdiskdownload ext4 defaults 0 0
+grub引导修复：
+	用ls (hhd0,序号)/boot/grub或者ls (hhd0.序号)/boot/grub 找出linux分区所在的地方
+	sudo root=(hhd0,序号)
+	sudo prefix=(hhd0,序号)/boot/grub或者（hdd0，序号）/grub
+	insmod normal
+	normal
+	进入系统后，sudo update-grub2
+		sudo grub-install /dev/sda
+ubuntu控制手机的办法：
+	Scrcpy 安装
+		snap install scrcpy
+	adb服务安装
+		sudo apt-get install android-tools-adb
+	用lsusb来查看手机usb设备号，前四位是设备号
+	创建设备文件：
+		mkdir ~/.android
+		echo 0x04e8 > ~/.android/adb_usb.ini
+		sudo touch /etc/udev/rules.d/android.rules
+		sudo gedit /etc/udev/rules.d/android.rules
+	在文件中输入:
+		SUBSYSTEM=="usb", SYSFS{idVendor}=="04e8", MODE="0666"
+	保存后修改文件权限	
+		sudo chmod 777 /etc/udev/rules.d/android.rules
+	启动adb服务
+		service udev restart
+	查看是否有设备挂载上来了
+		adb devices
+	最后启动服务
+		scrcpy
+git的安装及使用：
+	配置github用户名和邮箱地址
+		git config --global user.name "wpaiwm"
+		git config --global user.email "1228605963@qq.com"
+	创建一个仓库
+		git init
+	提交代码
+		提交全部
+			git add .
+		添加要提交的文件
+			git add readme.txt
+		提交
+ 			git commit -m "Wrote a readme file"
+	
+	在使用了修改了文件以后，想知道文件有那些改动
+		查看修改的位置
+			git status
+		查看具体修改的内容
+			git diff
+	在使用了git commit以后，如何查看文件的提交记录
+		查看提交日志
+			git log
+		git log出来的日志分析
+			commit defd8af52be5183dfceb3e5cf23f78ea47d013b0
+			Author: coder-pig <779878443@qq.com>
+			Date:   Fri Jun 19 17:00:36 2015 +0800
+			MainActivity Delete Menu
+			依次是：
+		        此次提交对应的版本号
+        		提交人：姓名 邮箱
+        		提交的时间
+        		提交版本修改的内容：就是我们commit -m "xxx"里的xxx
+	撤销未git add的修改
+			git checkout src/com/jay/example/testforgit/MainActivity.java
+	撤销已git add的修改
+			git reset HEAD src/com/jay/example/testforgit/MainActivity.java
+			git checkout src/com/jay/example/testforgit/MainActivity.java	
+	回退到文件的前一个版本
+			git reset --hard HEAD
+			git reset --hard HEAD^
+ 			git log
+	根据版本号来回退
+			查看所有版本号
+				git reflog
+			回退到指定的版本号
+
+				git reset --hard ad2080c
+	git提交到github
+		git init
+		git add .
+		git commit -m "first"
+		git remote add origin https://github.com/wpaiwm/1603.git
+		git push -u origin master
+		git pull --rebase origin master
+			
+	
+
+		
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
