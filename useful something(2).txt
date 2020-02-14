@@ -256,6 +256,44 @@ git的安装及使用：
 		git remote add origin https://github.com/wpaiwm/1603.git
 		git push -u origin master
 		git pull --rebase origin master
+ubuntu搭建v2ray
+	服务端的搭建：
+		利用自动化脚本搭建：
+			bash <(curl -L -s https://install.direct/go.sh)
+			启动服务：
+				systemctl start v2ray
+			然后vim /etc/v2ray/config.json
+			配置如下：
+				{
+  					"inbounds": [
+    					 {
+      						"port": 443, // Vmess 协议服务器监听端口
+      						"protocol": "vmess",
+      						"settings": {
+        						"clients": [
+          							{
+            								"id": "b831381d-6324-4d53-ad4f-8cda48b30811" // id(UUID) 需要修改
+          							}
+        						 ]
+      						 }
+    					 },
+     					{
+      						"port": 444, // SS 协议服务端监听端口
+     						"protocol": "shadowsocks",
+      						"settings": {
+        						"method": "aes-128-gcm", // 加密方式
+        						"password": "yuan.ga" //密码
+      						}
+    					}
+  					],
+  					"outbounds": [
+   						 {
+      							"protocol": "freedom",
+      							"settings": {}
+    						}
+  					]
+				}
+				其中vmess协议id客户端和服务端要保持一致，id的生成可以由https://www.uuidgenerator.net/网址生成
 			
 	
 
