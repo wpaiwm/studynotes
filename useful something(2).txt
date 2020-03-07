@@ -89,6 +89,10 @@ Mysql的一些命令：
 	skip-grant-table
 	update user set authentication_string=password("ln122920"),plugin='mysql_native_password' where user='root';
 	sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
+	mysql初次安装没有密码设置
+		使用mysqladmin -uroot -p password
+	解决root权限才能登陆的问题
+		alter user 'root'@'localhost' identified with mysql_native_password by 'your password'
 ifconfig配置ip：
 设置服务开机自启动：
 	systemctl 服务名 enable
@@ -203,6 +207,22 @@ ubuntu控制手机的办法：
 	最后启动服务
 		scrcpy
 git的安装及使用：
+	配置ssh密钥：
+		ssh-keygen -t rsa -C "youremail@example.com" 然后去gitgub上保存自己的密钥			
+		检查密钥是否配置上去
+			ssh -T git@github.com
+	拉取仓库，但不合并到自己的目前的分支
+		git fetch origin master
+	合并分支
+		git merge origin master
+	直接拉取
+		git pull origin master	
+	创建新的分支
+		git branch (分支名)
+	切换分支
+		git checkout(分支名)
+	切换到主分支以后
+		git merge (分支名)
 	配置github用户名和邮箱地址
 		git config --global user.name "wpaiwm"
 		git config --global user.email "1228605963@qq.com"
@@ -294,43 +314,45 @@ ubuntu搭建v2ray
   					]
 				}
 				其中vmess协议id客户端和服务端要保持一致，id的生成可以由https://www.uuidgenerator.net/网址生成
-			
-	
+maven 发布项目到tomcat
+	在所创maven项目的pom.xml中加入如下代码
+		<plugins>
+			<plugin>
+			    <groupId>org.apache.tomcat.maven</groupId>
+			    <artifactId>tomcat7-maven-plugin</artifactId>
+			    <version>2.2</version>
+			    <configuration>
+				<url>http://localhost:8080/manager/text</url>
+			    	<server>tomcat</server>
+				<username>tomcat</username>
+				<password>123456</password>
+			     </configuration>
+		     	</plugin>
+		 </plugins>
 
-		
-
-
-	
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	然后在tomcat安装目录下的conf文件夹下的tomcat-user.xml处加入如下代码
+		<role rolename="manager"/>
+		<user username="tomcat" password="123456" roles="manager-script,tomcat,role1,admin,manager,manager-gui"/>
+maven采用java8编译
+	在所在项目的pom.xml中加入如下配置
+		<properties>
+  		  <!-- 使用java8的编译器来进行编译 -->
+		  <maven.compiler.target>1.8</maven.compiler.target>
+  		  <maven.compiler.source>1.8</maven.compiler.source>
+		</properties>
+ubuntu18.0安装搜狗输入法
+    安装fctix依赖
+        sudo apt install fcitx-bin
+        sudo apt install fcitx-table
+    卸载掉ibus
+        sudo apt purge ibus
+        sudo apt autoremove
+        重启电脑
+    安装搜狗拼音deb包
+        sudo dpkg -i
+        如果显示缺少依赖的话，可以用sudo apt install -f修复
+        重启电脑
 
 
 
-
-
-
-
-
-
-
-
-  
+            

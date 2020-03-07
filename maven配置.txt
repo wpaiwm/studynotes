@@ -13,5 +13,11 @@
 	-o 离线执行命令,即不去远程仓库更新包 
 	-X 显示maven允许的debug信息 
 	-U 强制去远程参考更新snapshot包
+3.maven常用命令
+	创建一个mvn项目
+		
+	
+4.maven直接发布到tomcat
+    
  
 		
