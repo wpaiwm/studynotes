@@ -1,0 +1,100 @@
+{
+  "log": {
+    "loglevel": "none"
+  },
+  "inbounds": [
+  {
+  "port": 1080,
+  "listen": "127.0.0.1",
+  "protocol": "socks",
+  "sniffing": {
+    "enabled": true,
+    "destOverride": [
+      "http",
+      "tls"
+    ]
+  },
+  "settings": {
+    "auth": "noauth",
+    "udp": true,
+    "ip": null,
+    "clients": null
+  },
+  "streamSettings": null
+}
+  ],
+  "outbounds": [
+    {
+      "protocol": "vmess",
+      "settings": {
+        "vnext": [
+          {
+            "address": "45.82.255.40",
+            "port": 10086,
+            "users": [
+              {
+                "id": "71cafe89-3cc5-4f6f-a4b2-aa792f46b151",
+                "alterId": 64,
+                "security": "auto",
+                "level": 1
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "security": "none",
+        "tlsSettings": {
+          "serverName": "",
+          "allowInsecure": false
+        },
+        "tcpSettings": {
+          "header": {
+            "type": "none",
+            "request": {}
+          }
+        }
+      },
+      "mux": {
+        "enabled": false,
+        "concurrency": 8
+      },
+      "tag": "proxy"
+    },
+    {
+      "protocol": "freedom",
+      "settings": {},
+      "tag": "direct"
+    },
+    {
+      "protocol": "blackhole",
+      "settings": {},
+      "tag": "block"
+    }
+  ],
+  "policy": {
+    "levels": {
+      "1": {
+        "handshake": 6,
+        "connIdle": 300,
+        "uplinkOnly": 2,
+        "downlinkOnly": 5,
+        "bufferSize": 2
+      }
+    }
+  },
+  "routing": {
+    "domainStrategy": "IPIfNonMatch",
+    "rules": [
+      {
+        "type": "field",
+        "ip": [
+          "geoip:private",
+          "geoip:cn"
+        ],
+        "outboundTag": "direct"
+      }
+    ]
+  }
+}
