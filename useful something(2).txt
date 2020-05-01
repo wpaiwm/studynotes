@@ -352,7 +352,126 @@ ubuntu18.0安装搜狗输入法
         sudo dpkg -i
         如果显示缺少依赖的话，可以用sudo apt install -f修复
         重启电脑
-
-
-
-            
+ubuntu18.0安装rabbitmq
+	首先把ubuntu的镜像源改成阿里的
+	安装erlang依赖
+		sudo apt-get install erlang-nox
+	安装rabbitmq
+		sudo apt-get update
+		sudo apt-get install rabbitmq-server
+	启动、停止、重启、状态rabbitMq命令
+		sudo rabbitmq-server start
+		sudo rabbitmq-server stop
+		sudo rabbitmq-server restart
+		sudo rabbitmq-server status
+	添加admin,并赋予administrator权限
+		sudo rabbitmqctl add_user admin admin
+		sudo rabbitmqctl set_user_tags admin administrator
+	赋予virtual host中所有资源的配置、写、读权限以便管理其中的资源
+		sudo rabbitmqctl set_permissions -p / admin '.*''.*''.*'
+	登录rabbitmq gui界面
+		cd /etc/rabbitmq
+		sudo rabbitmq-plugins enable rabbitmq_management
+		然后用浏览器访问 http://localhost:15672/	
+mysql配置文件详解
+	# mysql的shell脚本，用来启动mysql。nice命令是用来设定优先权，
+	[mysqld_safe]
+	socket      = /var/run/mysqld/mysqld.sock
+	nice        = 0
+	
+	[mysqld]
+	# mysql用哪个用户启动
+	user        = mysql
+	# 对应的pid和sock文件位置
+	pid-file    = /var/run/mysqld/mysqld.pid
+	socket      = /var/run/mysqld/mysqld.sock
+	# 对应端口，有的单机启多个服务器的，每个服务器要用不同的端口
+	port        = 3306
+	# MySQL目录，数据目录，缓存目录，ubuntu修改datadir还有个坑，见我的收藏
+	basedir     = /usr
+	datadir     = /data/mysql
+	tmpdir      = /tmp
+	# 消息错误的语言,可以看这目录下的文件,一般不改
+	lc-messages-dir = /usr/share/mysql
+	# 跳过外部锁定，仅对MyISAM引擎表有用
+	skip-external-locking
+	# 允许外部IP访问，如果改成0.0.0.0，则每个外部服务器都能访问到，有安全问题
+	bind-address        = 127.0.0.1
+	# MySQL所允许的同时会话数上限，如果该值设的少，很容易出现 Too many connections
+	max_connections        = 1000
+	# 每个客户端连接的最大错误允许数，如果达到这个数的限制，这个客户端将会被MySQL
+	# 服务阻止直到执行 Flush Hosts 或者服务重启
+	max_connect_errors = 50
+	# 设置最大包，限制server接收的数据包大小，避免超长SQL的执行问题
+	max_allowed_packet = 16M
+	# 关键词缓冲区大小，用来缓冲MyISAM表的索引块，决定了数据库索引处理的速度
+	# 尤其是读取的速度
+	key_buffer_size     = 3M
+	thread_stack        = 192K
+	# 服务端线程缓存
+	thread_cache_size       = 300
+	# 这个值应该为CPU核数的两倍，用于充分使用多核性能。
+	# 这个变量是针对Solaris系统的，而且MYSQL5.6就去掉了，千万注意！！
+	#thread_concurrency = 4
+	# 自动修复MyISAM表，有几个选项，自己查阅文档吧
+	myisam-recover-options  = BACKUP
+	# 每个连接需要用到buffer时分配的内存大小，这个值不是越大越好，高并发用大值，容易
+	# 导致内存耗尽，简单计算1000个连接时用1000*1m =1G内存
+	sort_buffer_size = 1M
+	# join表时用的缓存
+	join_buffer_size = 8M
+	# 单次查询缓冲区大小
+	query_cache_limit   = 2M
+	# 查询缓存大小。当一次查询完了之后，MySQL会把查询的结果缓存，当下次有相同查询
+	# 就把缓存中的结果直接返回。牢记如果值设大了，而你的数据库场景是多写，会影响写入
+	# 的效率。具体的原因查阅文档
+	query_cache_size        = 128M
+	
+	# mysql常规日志，牢记线上环境别轻易开启，写入的日志量非常庞大。
+	# 如果有什么需要调试和检查错误，可以开启一下
+	#general_log_file        = /var/log/mysql/mysql.log
+	#general_log             = 1
+	
+	# mysql的错误日志，有助于你查询mysql问题
+	log_error = /var/log/mysql/error.log
+	
+	# mysql的慢查询日志，建议开启，一般超过1秒就是慢查询，如果担心可以设的长一点
+	#log_slow_queries   = /var/log/mysql/mysql-slow.log
+	#long_query_time = 2
+	#log-queries-not-using-indexes
+	
+	# 和binlog相关的，暂不处理，主从复制需要用到
+	#server-id      = 1
+	#log_bin            = /var/log/mysql/mysql-bin.log
+	expire_logs_days    = 10
+	max_binlog_size   = 100M
+	#binlog_do_db       = include_database_name
+	#binlog_ignore_db   = include_database_name
+	
+	# 设置做MyISAM表全表扫描时的缓冲大小
+	read_buffer_size =2M
+	# 在排序后从排序好的数据读取行时，行数据从这个缓存区读出，合理设置这个值。可以提升 
+	# order by的性能。注意：MySQL会为每个客户端连接申请该缓冲区，并发过大，该值过大会
+	# 造成性能开销过大
+	read_rnd_buffer_size = 1M
+	# MyISAM表发生变化时候重新排序需要的缓存
+	myisam_sort_buffer_size = 8M
+	
+	# innodb用来缓存来保存索引和原始数据，正确设置这个值，可以有效减少读取数据需要的磁盘# IO，比如书里面设置的数据是4G
+	innodb_buffer_pool_size = 128M
+	# 数据日志文件的大小。
+	innodb_log_file_size = 128M
+	# 日志文件的缓存
+	innodb_log_buffer_size = 8M
+	# 预写日志的方式，复杂，自己看文档吧
+	innodb_flush_log_at_trx_commit =1
+	# 再被回滚之前，一个innodb的事务应该等一个锁被批准多久。如果用了lock tables这种指令
+	# 这时这个超时就非常有效果
+	innodb_lock_wait_timeout =50
+		
+		
+		
+	
+	
+	
+	            
