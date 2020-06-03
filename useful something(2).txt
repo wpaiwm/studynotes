@@ -544,6 +544,14 @@ ubuntu使用百度网盘一直卡在加载界面的解决办法
 	删除主目录的baidunetdisk目录
 	cd ~
 	rm -r baidunetdisk
+idea和webstorm vim快捷键配置
+	imap <A-k> <Up>
+	imap <A-j> <Down>
+	imap <A-h> <Left>
+	imap <A-l> <Right>
+	imap <A-o>  <Esc>o
+	imap <A-;> <Esc>
+	map  <A-;> <Esc>
 
 		
 		
