@@ -468,6 +468,83 @@ mysql配置文件详解
 	# 再被回滚之前，一个innodb的事务应该等一个锁被批准多久。如果用了lock tables这种指令
 	# 这时这个超时就非常有效果
 	innodb_lock_wait_timeout =50
+手动安装mysql
+        先以root用户登录
+		sudo su
+	将解压好的文件放到/usr/local目录下
+		tar -xvf mysql-5.6.34-linux-glibc2.5-x86_64.tar
+		mv 解压出来的文件夹名 /usr/local/mysql
+	新建mysql用户组
+		groupadd mysql
+		useradd -g mysql mysql
+	新建/etc/my.cnf，并添加如下配置
+		vim /etc/my.cnf && sudo chmod 777 /etc/my.cnf
+		[mysql]
+		# 设置mysql客户端默认字符集
+		default-character-set=utf8 
+		socket=/var/lib/mysql/mysql.sock
+
+		[mysqld]
+		skip-grant-tables  #跳过密码验证
+		skip-name-resolve
+		#设置3306端口
+		port = 3306 
+		socket=/var/lib/mysql/mysql.sock
+		# 设置mysql的安装目录
+		basedir=/usr/local/mysql
+		# 设置mysql数据库的数据的存放目录
+		datadir=/usr/local/mysql/data
+		# 允许最大连接数
+		max_connections=200
+		# 服务端使用的字符集默认为8比特编码的latin1字符集
+		character-set-server=utf8
+		# 创建新表时将使用的默认存储引擎
+		default-storage-engine=INNODB
+		lower_case_table_name=1
+		max_allowed_packet=16M
+	修改mysql目录的所有者，并初始化数据库
+		cd /usr/local/mysql
+		chown -R mysql:mysql ./
+		./scripts/mysql_install_db --user=mysql --basedir=/usr/local/mysql/ --datadir=/usr/local/mysql/data/
+		中间提示依赖问题，安装就可以了
+	修改data目录用户所有者
+		chown -R mysql:mysql data
+	创建mysql socket通信目录
+		sudo mkdir /var/lib/mysql && sudo chmod 777 /var/lib/mysql
+	将mysql启动服务放到系统目录下
+		cp /usr/local/mysql/support-files/mysql.server /etc/init.d/mysql	建立软链接
+		ln -s  /usr/local/mysql/bin/mysql    /usr/bin	
+	配置mysql
+		cp ./support-files/mysql.server /etc/rc.d/init.d/mysqld
+		chmod +x /etc/rc.d/init.d/mysqld
+		sysv-rc-conf mysqld on
+		vim /etc/profile
+		export PATH=$PATH:/usr/local/mysql/bin
+阿里云镜像源
+	deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
+	deb-src http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
+	deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
+	deb-src http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
+	deb http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
+	deb-src http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
+	deb http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
+	deb-src http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
+	deb http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
+	deb-src http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
+ubuntu下查看图片
+	xdg-open filename.png
+ubuntu将左边的条设置隐藏调到底部
+	首先安装两个工具
+		sudo apt-get install gnome-tweak-tool
+		sudo apt-get install gnome-shell-extension-dashtodock
+	重启电脑
+		在命令行输入gnome-tweaks
+		在界面的扩展里设置相关选项
+ubuntu使用百度网盘一直卡在加载界面的解决办法
+	删除主目录的baidunetdisk目录
+	cd ~
+	rm -r baidunetdisk
+
 		
 		
 		
