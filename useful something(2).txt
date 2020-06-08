@@ -540,8 +540,6 @@ ubuntu将左边的条设置隐藏调到底部
 	重启电脑
 		在命令行输入gnome-tweaks
 		在界面的扩展里设置相关选项
-	如何隐藏顶部导航栏
-		软件中心搜索hide top panel
 ubuntu使用百度网盘一直卡在加载界面的解决办法
 	删除主目录的baidunetdisk目录
 	cd ~
@@ -554,7 +552,11 @@ idea和webstorm vim快捷键配置
 	imap <A-o>  <Esc>o
 	imap <A-;> <Esc>
 	map  <A-;> <Esc>
-
+ubuntu去除顶部导航栏的方法
+	访问https://extensions.gnome.org/extension/545/hide-top-bar/ 安装hide-top-bar
+	安装chrome-gnome-shell
+		sudo apt install chrome-gnome-shell
+	在之前的网页将hide-top-bar的开关打开 就可以配置了	
 		
 		
 		
