@@ -558,6 +558,7 @@ ubuntu去除顶部导航栏的方法
 		sudo apt install chrome-gnome-shell
 	在之前的网页将hide-top-bar的开关打开 就可以配置了	
 		
+haha
 		
 		
 	
