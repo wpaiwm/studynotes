@@ -560,7 +560,10 @@ ubuntu去除顶部导航栏的方法
 		sudo apt install chrome-gnome-shell
 	在之前的网页将hide-top-bar的开关打开 就可以配置了	
 		
-haha
+hongkong ip地址
+	119.28.228.157
+mysql ip地址和端口
+	139.199.215.43 10138
 		
 		
 	
