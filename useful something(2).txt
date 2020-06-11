@@ -279,6 +279,8 @@ git的安装及使用：
 ubuntu搭建v2ray
 	服务端的搭建：
 		利用自动化脚本搭建：
+			sudo su
+			apt update && apt install -y curl
 			bash <(curl -L -s https://install.direct/go.sh)
 			启动服务：
 				systemctl start v2ray
