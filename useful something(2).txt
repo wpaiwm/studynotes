@@ -564,6 +564,18 @@ hongkong ip地址
 	119.28.228.157
 mysql ip地址和端口
 	139.199.215.43 10138
+ubuntu18.0安装redis
+	sudo apt-get install redis-server
+ubuntu开启热点
+       命令行输入nm-connection-editor，然后点击下方的新建wifi，选择hotspot
+biz2文件的使用
+	.bz2 
+		解压1：bzip2 -d FileName.bz2 
+		解压2：bunzip2 FileName.bz2 
+		压缩： bzip2 -z FileName 
+	.tar.bz2 
+	解压：tar jxvf FileName.tar.bz2 #显示解压详细过程       或tar --bzip xvf FileName.tar.bz2 #不显示解压详细过程
+	压缩：tar jcvf FileName.tar.bz2 DirName 
 		
 		
 	
