@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<!-- saved from url=(0034)https://ywnz.com/linuxjc/4002.html -->
+<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<title>在Ubuntu 18.04桌面系统上安装Wireshark的方法_Linux教程_云网牛站</title>
+<meta name="keywords" content="Ubuntu 18.04上安装Wireshark">
+<meta name="description" content="本文介绍在Ubuntu 18.04/Ubuntu 18.06桌面系统上安装Wireshark的方法，Wireshark是一个免费的开源网络分析工具和数据包分析器，通过Wireshark，可以实时捕获网络流量，并将其用于网络分析，故障">
+<link rel="stylesheet" href="./在Ubuntu 18.04桌面系统上安装Wireshark的方法_Linux教程_云网牛站_files/ywnz.css" type="text/css">
+<link rel="shortcut icon" href="https://ywnz.com/favicon.ico" type="image/x-icon">
+<link rel="canonical" href="https://ywnz.com/linuxjc/4002.html">
+    <script src="./在Ubuntu 18.04桌面系统上安装Wireshark的方法_Linux教程_云网牛站_files/osd.js"></script><script src="./在Ubuntu 18.04桌面系统上安装Wireshark的方法_Linux教程_云网牛站_files/f(5).txt"></script><script src="./在Ubuntu 18.04桌面系统上安装Wireshark的方法_Linux教程_云网牛站_files/f(6).txt" id="google_shimpl"></script><script src="./在Ubuntu 18.04桌面系统上安装Wireshark的方法_Linux教程_云网牛站_files/push.js"></script><script src="./在Ubuntu 18.04桌面系统上安装Wireshark的方法_Linux教程_云网牛站_files/hm.js"></script><script type="application/ld+json">
+        {
+            "@context": "https://ziyuan.baidu.com/contexts/cambrian.jsonld",
+            "@id": "https://ywnz.com/linuxjc/4002.html",
+            "appid": "1603755740518330",
+            "title": "在Ubuntu 18.04桌面系统上安装Wireshark的方法",
+            "pubDate": "2019-01-10T15:57:07"
+        }
+    </script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?69e3d76b6095640c1a7b79ad3368a093";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<link rel="preload" href="./在Ubuntu 18.04桌面系统上安装Wireshark的方法_Linux教程_云网牛站_files/f(7).txt" as="script"><script type="text/javascript" src="./在Ubuntu 18.04桌面系统上安装Wireshark的方法_Linux教程_云网牛站_files/f(7).txt"></script><link rel="preload" href="./在Ubuntu 18.04桌面系统上安装Wireshark的方法_Linux教程_云网牛站_files/f(8).txt" as="script"><script type="text/javascript" src="./在Ubuntu 18.04桌面系统上安装Wireshark的方法_Linux教程_云网牛站_files/f(8).txt"></script></head>
+<body style="position: static;">
+<div class="header">
+	<div class="top">
+      <div class="title">
+        <a href="https://ywnz.com/"><img src="./在Ubuntu 18.04桌面系统上安装Wireshark的方法_Linux教程_云网牛站_files/logo.png" width="150" height="60" alt="云网牛站"></a>
+      </div>
+      <div class="banner"><a href="https://ywnz.com/navigation.html" target="_blank"><img src="./在Ubuntu 18.04桌面系统上安装Wireshark的方法_Linux教程_云网牛站_files/ywnzdh.png" width="728" height="60" alt="云网牛站导航"></a></div>
+	</div>
+	<div class="module">
+  	<div class="top">
+    <div id="navMenu">
+    	<ul>
+      	<li><a href="https://ywnz.com/">首页</a></li>
+     <li><a href="https://ywnz.com/linuxxw/">Linux新闻</a></li>
+     <li><a href="https://ywnz.com/linuxxz/">Linux下载</a></li>
+     <li><a href="https://ywnz.com/linuxaz/">Linux安装</a></li>
+     <li><a href="https://ywnz.com/linuxjc/">Linux教程</a></li>
+     <li><a href="https://ywnz.com/linuxrj/">Linux软件</a></li>
+     <li><a href="https://ywnz.com/linuxml/">Linux命令</a></li>
+     <li><a href="https://ywnz.com/linuxmh/">Linux美化</a></li>
+     <li><a href="https://ywnz.com/linuxpx/">Linux培训</a></li>
+     <li><a href="https://ywnz.com/linuxyffq/">Linux云服务器</a></li>
+     <li><a href="https://ywnz.com/linuxysjk/">Linux云数据库</a></li>
+     <li><a href="https://ywnz.com/linuxaq/">Linux安全</a></li>
+     <li><a href="https://ywnz.com/linuxbc/">Linux编程</a></li>
+    	</ul>
+    </div>
+	</div>
+	</div>
+</div>
+<div class="w990" style="height: auto !important;">
+<div class="pleft" style="height: auto !important;">
+ <div class="place">所在位置:<a href="https://ywnz.com/">首页</a> &gt; <a href="https://ywnz.com/linuxjc/">Linux教程</a> &gt; 在Ubuntu 18.04桌面系统上安装Wireshark的方法</div>
+ <div class="viewbox" style="height: auto !important;">
+  <div class="title">
+   <h1>在Ubuntu 18.04桌面系统上安装Wireshark的方法</h1>
+  </div>
+  <div class="info">2019-01-10 15:57:07<small>作者:</small>戴进<small>稿源:</small>云网牛站</div>
+  <div class="content" style="height: auto !important;">
+<script async="" src="./在Ubuntu 18.04桌面系统上安装Wireshark的方法_Linux教程_云网牛站_files/f(9).txt"></script>
+<!-- wenzhang shang -->
+<ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-8023555791144639" data-ad-slot="5615772734" data-ad-format="auto" data-full-width-responsive="true" data-adsbygoogle-status="done" data-overlap-observer-io="false"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:806px;background-color:transparent;"><ins id="aswift_0_anchor" style="display: block; border: none; height: 280px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 806px; background-color: transparent; overflow: visible;"><iframe id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0;width:806px;height:280px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="806" height="280" frameborder="0" src="./在Ubuntu 18.04桌面系统上安装Wireshark的方法_Linux教程_云网牛站_files/ads.html" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!1" data-google-query-id="CJC6h66TieoCFQtmiwodaEwOGA" data-load-complete="true"></iframe></ins></ins></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+   <table width="100%" style="height: auto !important;">
+    <tbody><tr style="height: auto !important;">
+     <td style="height: auto !important;">
+      <p>
+	本文介绍在Ubuntu 18.04/Ubuntu 18.06桌面系统上安装Wireshark的方法，Wireshark是一个免费的开源网络分析工具和数据包分析器，通过Wireshark，可以实时捕获网络流量，并将其用于网络分析，故障排除，教育等，在Ubuntu 18.04上安装Wireshark可以选择安装稳定Wireshark或开发的版本。对于GNS3用户可以参考<a href="https://ywnz.com/linuxjc/3774.html" target="_blank">在Ubuntu 18.04系统上安装GNS3的方法</a>。</p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>安装Stable Wireshark版本</strong></p>
+<p>
+	如果你对稳定有要求，而不是尖端功能，那么你可以在Ubuntu 18.04上安装Wireshark的稳定版本。</p>
+<p>
+	添加PPA存储库并安装Wireshark：</p>
+<p>
+	sudo add-apt-repository ppa:wireshark-dev/stable&nbsp;</p>
+<p>
+	sudo apt update</p>
+<p>
+	sudo apt -y install wireshark</p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>安装Wireshark开发版</strong></p>
+<p>
+	要获得开发版本，请添加：</p>
+<p>
+	sudo add-apt-repository ppa:dreibh/ppa</p>
+<p>
+	从存储库安装Wireshark：</p>
+<p>
+	sudo apt update</p>
+<p>
+	sudo apt -y install wireshark</p>
+<p>
+	当询问是否允许非超级用户捕获数据包时，请选择你的选项并完成安装：</p>
+<p style="text-align: center;">
+	<img alt="在Ubuntu 18.04桌面系统上安装Wireshark的方法" src="./在Ubuntu 18.04桌面系统上安装Wireshark的方法_Linux教程_云网牛站_files/1-1Z110155542133.JPG" style="width: 639px; height: 356px;"></p>
+<p>
+	检查已安装的Wireshark版本：</p>
+<p>
+	$ wireshark --version</p>
+<p>
+	Wireshark 2.9.0 (Git Rev Unknown from unknown)</p>
+<p style="text-align: center;">
+	<img alt="在Ubuntu 18.04桌面系统上安装Wireshark的方法" src="./在Ubuntu 18.04桌面系统上安装Wireshark的方法_Linux教程_云网牛站_files/1-1Z110155552604.JPG" style="width: 638px; height: 372px;"></p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>配置Wireshark</strong></p>
+<p>
+	为了能够以普通用户身份捕获数据包，请将你的用户添加到wireshark组：</p>
+<p>
+	sudo usermod -a -G wireshark $USER</p>
+<p>
+	还要更改dumpcap二进制文件权限：</p>
+<p>
+	sudo chgrp wireshark /usr/bin/dumpcap</p>
+<p>
+	sudo chmod 750 /usr/bin/dumpcap</p>
+<p>
+	sudo setcap cap_net_raw,cap_net_admin=eip /usr/bin/dumpcap</p>
+<p>
+	校验：</p>
+<p>
+	$ sudo getcap /usr/bin/dumpcap</p>
+<p>
+	/usr/bin/dumpcap = cap_net_admin,cap_net_raw+eip</p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>启动Wireshark</strong></p>
+<p>
+	启动Wireshark应用程序可以从CLI或应用程序启动器完成：</p>
+<p style="text-align: center;">
+	<img alt="在Ubuntu 18.04桌面系统上安装Wireshark的方法" src="./在Ubuntu 18.04桌面系统上安装Wireshark的方法_Linux教程_云网牛站_files/1-1Z110155604347.JPG" style="width: 534px; height: 213px;"></p>
+<p>
+	要从GUI启动Wireshark，请搜索wireshark并按Enter键：</p>
+<p style="text-align: center;">
+	<img alt="在Ubuntu 18.04桌面系统上安装Wireshark的方法" src="./在Ubuntu 18.04桌面系统上安装Wireshark的方法_Linux教程_云网牛站_files/1-1Z110155633G8.JPG" style="width: 660px; height: 337px;"></p>
+<p>
+	通过输入命令可以完成同样的操作：</p>
+<p>
+	$ wireshark</p>
+<p>
+	要测试数据包捕获，请选择要使用的接口，然后单击开始捕获数据包按钮：</p>
+<p style="text-align: center;">
+	<img alt="在Ubuntu 18.04桌面系统上安装Wireshark的方法" src="./在Ubuntu 18.04桌面系统上安装Wireshark的方法_Linux教程_云网牛站_files/1-1Z1101556444C.JPG" style="width: 660px; height: 400px;"></p>
+<p>
+	到这里，你已经安装了Wireshark并在你的Ubuntu 18.04台式机上正常运行着。</p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>相关主题</strong></p>
+<p>
+	<a href="https://ywnz.com/linuxjc/3265.html" target="_blank">在Linux系统中安装Wireshark并使用的方法</a></p>
+<script async="" src="./在Ubuntu 18.04桌面系统上安装Wireshark的方法_Linux教程_云网牛站_files/f(9).txt"></script>
+<!-- wenzhang xia -->
+<ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-8023555791144639" data-ad-slot="6846870029" data-ad-format="auto" data-full-width-responsive="true" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display: inline-table; border: none; height: auto !important; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 802px; background-color: transparent;"><ins id="aswift_1_anchor" style="display: block; border: none; height: 280px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 802px; background-color: transparent; overflow: visible;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:802px;height:280px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="802" height="280" frameborder="0" src="./在Ubuntu 18.04桌面系统上安装Wireshark的方法_Linux教程_云网牛站_files/ads(1).html" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!2" data-google-query-id="CMCU07qTieoCFdZEYAodbUEHEg" data-load-complete="true"></iframe></ins></ins></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+     </td>
+    </tr>
+   </tbody></table>
+  </div>
+</div>
+<script async="" src="./在Ubuntu 18.04桌面系统上安装Wireshark的方法_Linux教程_云网牛站_files/f(9).txt"></script>
+<ins class="adsbygoogle" style="display: block; height: 504px;" data-ad-format="autorelaxed" data-ad-client="ca-pub-8023555791144639" data-ad-slot="5461380630" data-adsbygoogle-status="done"><ins id="aswift_2_expand" style="display:inline-table;border:none;height:504px;margin:0;padding:0;position:relative;visibility:visible;width:840px;background-color:transparent;"><ins id="aswift_2_anchor" style="display:block;border:none;height:504px;margin:0;padding:0;position:relative;visibility:visible;width:840px;background-color:transparent;"><iframe id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;border:0;width:840px;height:504px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="840" height="504" frameborder="0" src="./在Ubuntu 18.04桌面系统上安装Wireshark的方法_Linux教程_云网牛站_files/ads(2).html" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!3" data-google-query-id="CIK867qTieoCFePPTAId8v0JDA" data-load-complete="true"></iframe></ins></ins></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  <div class="channelarticle">
+    <div class="linuxwenzhang">频道文章</div>
+     <ul class="linuxarticle">
+      <li><a href="https://ywnz.com/linuxjc/4001.html" target="_blank">在Ubuntu 18.04/16.04/Debian 9上安装Gradle 5.1的方法</a></li>
+<li><a href="https://ywnz.com/linuxjc/4009.html" target="_blank">在RHEL 8系统上安装Grafana 5.4.2的步骤</a></li>
+<li><a href="https://ywnz.com/linuxjc/6030.html" target="_blank">在Fedora 31系统中使用Firefox的一些技巧</a></li>
+<li><a href="https://ywnz.com/linuxjc/6028.html" target="_blank">在Linux中更改Git远程URL（Git Remote URL）的方法</a></li>
+<li><a href="https://ywnz.com/linuxjc/6027.html" target="_blank">在Linux Vim/Vi编辑器中进行复制、剪切和粘贴操作</a></li>
+<li><a href="https://ywnz.com/linuxjc/6025.html" target="_blank">从Fedora 30升级到Fedora 31版本的方法（使用命令行升级）</a></li>
+<li><a href="https://ywnz.com/linuxjc/6020.html" target="_blank">在CentOS 8系统中安装Node.js 10.16.3和npm 12.13.0的方法</a></li>
+<li><a href="https://ywnz.com/linuxjc/6016.html" target="_blank">该选择Linux QQ哪个安装包？Ubuntu 18.04用户选amd64.deb软件包</a></li>
+<li><a href="https://ywnz.com/linuxjc/6011.html" target="_blank">Regolith Linux支持Ubuntu 19.10版，附安装的方法</a></li>
+<li><a href="https://ywnz.com/linuxjc/6008.html" target="_blank">忽略Git中的文件和目录，讲解.gitignore文件的作用</a></li>
+<li><a href="https://ywnz.com/linuxjc/6006.html" target="_blank">从Ubuntu 19.04升级到Ubuntu 19.10版本最简单的方法</a></li>
+<li><a href="https://ywnz.com/linuxjc/6002.html" target="_blank">关于笔记本电脑中Ubuntu 19.10分数缩放的说明</a></li>
+     </ul>
+  </div>
+  <div class="channelarticle">
+    <div class="linuxwenzhang">全站推荐文章</div>
+     <ul class="linuxarticle">
+      <li><a href="https://ywnz.com/linuxaz/1438.html" target="_blank">安装Ubuntu 18.04 LTS桌面详细步骤</a></li>
+<li><a href="https://ywnz.com/linuxxw/1431.html" target="_blank">Ubuntu 18.04 LTS发布-看看有些什么新功能</a></li>
+<li><a href="https://ywnz.com/linuxxz/1144.html" target="_blank">2018十大最佳Linux发行版，Linux版本选择指南</a></li>
+<li><a href="https://ywnz.com/linuxxz/1022.html" target="_blank">2018年10大最漂亮的Linux发行版</a></li>
+<li><a href="https://ywnz.com/linuxysjk/808.html" target="_blank">12条用于Linux的MySQL/MariaDB安全最佳实践</a></li>
+<li><a href="https://ywnz.com/linuxml/527.html" target="_blank">如何轻松记住Linux命令</a></li>
+<li><a href="https://ywnz.com/linuxxw/429.html" target="_blank">LinuxMint 18.3亮点抢鲜看</a></li>
+<li><a href="https://ywnz.com/linuxbc/426.html" target="_blank">开发Linux调试器教程</a></li>
+<li><a href="https://ywnz.com/linuxpx/332.html" target="_blank">完全抛弃Windows将工作环境迁移到Ubuntu攻略</a></li>
+<li><a href="https://ywnz.com/linuxml/318.html" target="_blank">Linux命令及Linux终端的20个趣事</a></li>
+<li><a href="https://ywnz.com/linuxrj/267.html" target="_blank">在Ubuntu中下载安装electronic-wechat微信客户端</a></li>
+<li><a href="https://ywnz.com/linuxaz/214.html" target="_blank">VirtualBox中安装CentOS 7过程记录</a></li>
+     </ul>
+  </div>
+</div>
+<div class="pright">
+<script async="" src="./在Ubuntu 18.04桌面系统上安装Wireshark的方法_Linux教程_云网牛站_files/f(9).txt"></script>
+<!-- wenzhang you -->
+<ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-8023555791144639" data-ad-slot="7429323952" data-ad-format="auto" data-full-width-responsive="true" data-adsbygoogle-status="done" data-overlap-observer-io="false"><ins id="aswift_3_expand" style="display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:352px;background-color:transparent;"><ins id="aswift_3_anchor" style="display: block; border: none; height: 280px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 352px; background-color: transparent; overflow: visible;"><iframe id="aswift_3" name="aswift_3" style="left:0;position:absolute;top:0;border:0;width:352px;height:280px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="352" height="280" frameborder="0" src="./在Ubuntu 18.04桌面系统上安装Wireshark的方法_Linux教程_云网牛站_files/ads(3).html" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!4" data-google-query-id="CM-Uh66TieoCFUuJwgodyxkBbw" data-load-complete="true"></iframe></ins></ins></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="pright">
+   <dl class="tbox light">
+    <dt class="light">精选文章</dt>
+    <dd class="light">
+     <ul class="wenzhang hot">
+      <li><a href="https://ywnz.com/linuxjc/2211.html" target="_blank">你不用安装Linux也能用到Linux的方法</a></li>
+<li><a href="https://ywnz.com/linuxjc/1446.html" target="_blank">安装Ubuntu 18.04 LTS后要做的11件事情</a></li>
+<li><a href="https://ywnz.com/linuxjc/1342.html" target="_blank">如何在Windows 10上开启WSL之旅</a></li>
+<li><a href="https://ywnz.com/linuxjc/1227.html" target="_blank">如何在Linux上安装应用程序</a></li>
+<li><a href="https://ywnz.com/linuxjc/242.html" target="_blank">新手学习Linux基础教程</a></li>
+<li><a href="https://ywnz.com/linuxjc/196.html" target="_blank">Ubuntu 17.10安装之后需要做的9件事</a></li>
+<li><a href="https://ywnz.com/linuxjc/128.html" target="_blank">Ubuntu 16.04 LTS安装好之后需要做的</a></li>
+<li><a href="https://ywnz.com/linuxjc/122.html" target="_blank">延长Ubuntu笔记本电池续航8法</a></li>
+<li><a href="https://ywnz.com/linuxjc/47.html" target="_blank">将Ubuntu旧版本升级到Ubuntu新版本的</a></li>
+<li><a href="https://ywnz.com/linuxjc/32.html" target="_blank">如何整理Linux磁盘碎片</a></li>
+     </ul>
+    </dd>
+   </dl>
+  </div>
+  <div class="pright">
+   <dl class="tbox light">
+    <dt class="light">热门文章</dt>
+    <dd class="light">
+     <ul class="wenzhang hot">
+      <li><a href="https://ywnz.com/linuxjc/1257.html" target="_blank">在Linux下为X1 Carbon CPU降压</a></li>
+<li><a href="https://ywnz.com/linuxjc/1309.html" target="_blank">寻找失去的Ubuntu UEFI BIOS启动项</a></li>
+<li><a href="https://ywnz.com/linuxjc/1697.html" target="_blank">Ubuntu 18.04中删除virbr0网桥</a></li>
+<li><a href="https://ywnz.com/linuxjc/2024.html" target="_blank">Ubuntu Server 18.04下sudo速度很慢原因及</a></li>
+<li><a href="https://ywnz.com/linuxjc/2162.html" target="_blank">Ubuntu 18.04 NVIDIA驱动安装总结</a></li>
+<li><a href="https://ywnz.com/linuxjc/2895.html" target="_blank">在Ubuntu系统中安装IntelliJ IDEA的步骤</a></li>
+<li><a href="https://ywnz.com/linuxjc/3561.html" target="_blank">在Fedora系统上忘记root密码的解决，</a></li>
+<li><a href="https://ywnz.com/linuxjc/4058.html" target="_blank">在Debian 9/Debian 8系统中安装PHP 7.3的</a></li>
+<li><a href="https://ywnz.com/linuxjc/4071.html" target="_blank">在Ubuntu 18.04/Linux Mint 19上安装Atom </a></li>
+<li><a href="https://ywnz.com/linuxjc/4541.html" target="_blank">Deepin 15.9.2系统时间比本地时间快</a></li>
+<li><a href="https://ywnz.com/linuxjc/5457.html" target="_blank">安装和使用Wonderwall为Gnome找到新的</a></li>
+<li><a href="https://ywnz.com/linuxjc/83.html" target="_blank">Ubuntu 16.04安装Java JDK</a></li>
+     </ul>
+    </dd>
+   </dl>
+  </div>
+</div>
+<div class="footer">
+    <div>
+	<p><a href="https://ywnz.com/about.html" target="_blank">关于云网牛站</a>　<a href="https://ywnz.com/contact.html" target="_blank">联系我们</a>　<a href="https://ywnz.com/cooperation.html" target="_blank">网站合作</a>　<a href="https://ywnz.com/copyright.html" target="_blank">版权声明</a>　<a href="https://ywnz.com/navigation.html" target="_blank">网站导航</a></p>
+<p>© ywnz.com 版权所有</p>
+   </div>
+</div>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+<audio controls="controls" style="display: none;"></audio><ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;"><ins id="aswift_4_expand" style="display:inline-table;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;"><ins id="aswift_4_anchor" style="display:block;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;"><iframe id="aswift_4" name="aswift_4" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" src="./在Ubuntu 18.04桌面系统上安装Wireshark的方法_Linux教程_云网牛站_files/ads(4).html" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!4" data-load-complete="true"></iframe></ins></ins></ins><iframe id="google_osd_static_frame_6712161588389" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;" src="./在Ubuntu 18.04桌面系统上安装Wireshark的方法_Linux教程_云网牛站_files/saved_resource(2).html"></iframe></body><style type="text/css">#yddContainer{display:block;font-family:Microsoft YaHei;position:relative;width:100%;height:100%;top:-4px;left:-4px;font-size:12px;border:1px solid}#yddTop{display:block;height:22px}#yddTopBorderlr{display:block;position:static;height:17px;padding:2px 28px;line-height:17px;font-size:12px;color:#5079bb;font-weight:bold;border-style:none solid;border-width:1px}#yddTopBorderlr .ydd-sp{position:absolute;top:2px;height:0;overflow:hidden}.ydd-icon{left:5px;width:17px;padding:0px 0px 0px 0px;padding-top:17px;background-position:-16px -44px}.ydd-close{right:5px;width:16px;padding-top:16px;background-position:left -44px}#yddKeyTitle{float:left;text-decoration:none}#yddMiddle{display:block;margin-bottom:10px}.ydd-tabs{display:block;margin:5px 0;padding:0 5px;height:18px;border-bottom:1px solid}.ydd-tab{display:block;float:left;height:18px;margin:0 5px -1px 0;padding:0 4px;line-height:18px;border:1px solid;border-bottom:none}.ydd-trans-container{display:block;line-height:160%}.ydd-trans-container a{text-decoration:none;}#yddBottom{position:absolute;bottom:0;left:0;width:100%;height:22px;line-height:22px;overflow:hidden;background-position:left -22px}.ydd-padding010{padding:0 10px}#yddWrapper{color:#252525;z-index:10001;background:url(chrome-extension://eopjamdnofihpioajgfdikhhbobonhbb/ab20.png);}#yddContainer{background:#fff;border-color:#4b7598}#yddTopBorderlr{border-color:#f0f8fc}#yddWrapper .ydd-sp{background-image:url(chrome-extension://eopjamdnofihpioajgfdikhhbobonhbb/ydd-sprite.png)}#yddWrapper a,#yddWrapper a:hover,#yddWrapper a:visited{color:#50799b}#yddWrapper .ydd-tabs{color:#959595}.ydd-tabs,.ydd-tab{background:#fff;border-color:#d5e7f3}#yddBottom{color:#363636}#yddWrapper{min-width:250px;max-width:400px;}</style><iframe id="google_esf" name="google_esf" src="./在Ubuntu 18.04桌面系统上安装Wireshark的方法_Linux教程_云网牛站_files/zrt_lookup.html" data-ad-client="ca-pub-8023555791144639" style="display: none;"></iframe></html>
