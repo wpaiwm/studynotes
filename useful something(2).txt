@@ -576,6 +576,9 @@ biz2文件的使用
 	.tar.bz2 
 	解压：tar jxvf FileName.tar.bz2 #显示解压详细过程       或tar --bzip xvf FileName.tar.bz2 #不显示解压详细过程
 	压缩：tar jcvf FileName.tar.bz2 DirName 
+ubuntu好用的截图工具
+	sudo apt-get install flameshot	
+	在ubuntu设置界面里添加快捷键
 		
 		
 	
