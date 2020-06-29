@@ -579,6 +579,8 @@ biz2文件的使用
 ubuntu好用的截图工具
 	sudo apt-get install flameshot	
 	在ubuntu设置界面里添加快捷键
+chrome自动代理插件
+	Proxy SwitchSharp
 		
 		
 	
