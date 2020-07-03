@@ -580,8 +580,46 @@ ubuntu好用的截图工具
 	sudo apt-get install flameshot	
 	在ubuntu设置界面里添加快捷键
 chrome自动代理插件
-	Proxy SwitchyOmega
-		
+	Proxy SwitchyOmega	
+ubuntu文件数量过多的解决办法
+	Listen uses inotify by default on Linux to monitor directories for changes. It's not uncommon to encounter a system limit on the number of files you can monitor. For example, Ubuntu Lucid's (64bit) inotify limit is set to 8192.
+
+	You can get your current inotify file watch limit by executing:
+
+	$ cat /proc/sys/fs/inotify/max_user_watches
+	When this limit is not enough to monitor all files inside a directory, the limit must be increased for Listen to work properly.
+
+	You can set a new limit temporary with:
+
+	$ sudo sysctl fs.inotify.max_user_watches=524288
+	$ sudo sysctl -p
+	If you like to make your limit permanent, use:
+
+	$ echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf
+	$ sudo sysctl -p
+	You may also need to pay attention to the values of max_queued_events and max_user_instances if Listen keeps on complaining.
+ubuntu编辑grub界面的办法
+	改变默认光标的位置
+		vim /etc/default/grub
+		在里面的default选项改变数字默认是0开始，一般windows是4
+	改变界面里文字显示的顺序
+		vim /boot/grub/grub.cfg 将里面的windows菜单粘贴到Ubuntu菜单之前就可以了
+ubuntu18设置静态ip和dns
+		vim /etc/netplan/01-network-manager-all.yaml  
+			在里面写下如此的选项,要注意yaml语法父项下的子项首行要缩进四个空格
+				# Let NetworkManager manage all devices on this system
+				network:
+    				version: 2
+				#    renderer: networkd
+    				ethernets:
+        				enp0s25:
+            				addresses: [192.168.4.237/24]
+            				gateway4: 192.168.4.2
+            				dhcp4: no
+            				nameservers:
+                				addresses: [114.114.114.114]
+
+	
 		
 	
 	
