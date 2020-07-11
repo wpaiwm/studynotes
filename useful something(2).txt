@@ -370,7 +370,7 @@ ubuntu18.0安装rabbitmq
 		sudo rabbitmqctl add_user admin admin
 		sudo rabbitmqctl set_user_tags admin administrator
 	赋予virtual host中所有资源的配置、写、读权限以便管理其中的资源
-		sudo rabbitmqctl set_permissions -p / admin '.*''.*''.*'
+		sudo rabbitmqctl set_permissions -p / admin '.*' '.*' '.*'
 	登录rabbitmq gui界面
 		cd /etc/rabbitmq
 		sudo rabbitmq-plugins enable rabbitmq_management
@@ -613,8 +613,14 @@ ubuntu18设置静态ip和dns
 				#    renderer: networkd
     				ethernets:
         				enp0s25:
-            				addresses: [192.168.4.237/24]
-            				gateway4: 192.168.4.2
-            				dhcp4: no
-            				nameservers:
-                				addresses: [114.114.114.114]	            sudo netplan apply
+            			            addresses: [192.168.4.237/24]
+            				    gateway4: 192.168.4.2
+            				    dhcp4: no
+            				    nameservers:
+                				addresses: [114.114.114.114] 
+       sudo netplan apply
+
+ubuntu命令行终端让所有的协议都走socks代理
+	export ALL_PROXY="socks:127.0.0.1:8080"
+ubuntu挂载硬盘怎么不让硬盘图标出现在桌面上
+	将目录建在根目录下，然后将硬盘挂载上来，然后对根目录下的目录进行软链接
