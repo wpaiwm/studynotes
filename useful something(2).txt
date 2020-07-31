@@ -1,11 +1,11 @@
-å®‰è£…ubuntuæ¡Œé¢ï¼š
+°²×°ubuntu×ÀÃæ£º
 	sudo apt-get install xinit
-	sudo apt-get install gdm  ( ç™»é™†çª—å£ï¼Œç”¨äºç®¡ç†è´¦æˆ·ç™»é™†çš„ï¼Œè¿˜å¯ä»¥ç”¨æ¥åˆ‡æ¢åˆ«çš„æ¡Œé¢ç¯å¢ƒã€‚ )
+	sudo apt-get install gdm  ( µÇÂ½´°¿Ú£¬ÓÃÓÚ¹ÜÀíÕË»§µÇÂ½µÄ£¬»¹¿ÉÒÔÓÃÀ´ÇĞ»»±ğµÄ×ÀÃæ»·¾³¡£ )
 	sudo apt-get install ubuntu-desktop 
-	shutdown -r now (é‡å¯æ“ä½œï¼Œä¸è¡ŒæœåŠ¡å™¨é‡å¯)
-æŸ¥çœ‹unbuntuç‰ˆæœ¬ï¼š
+	shutdown -r now (ÖØÆô²Ù×÷£¬²»ĞĞ·şÎñÆ÷ÖØÆô)
+²é¿´unbuntu°æ±¾£º
 	cat /etc/issue
-è½¯ä»¶æºæ›¿æ¢ï¼š
+Èí¼şÔ´Ìæ»»£º
 	sudo cp /etc/apt/sources.list /etc/apt/sources.list.backup
 	vi /etc/apt/sources.list
 	deb http://archive.ubuntu.com/ubuntu/ gutsy main restricted universe multiverse	
@@ -28,48 +28,48 @@
 	deb-src http://mirrors.aliyun.com/ubuntu/ trusty-updates main restricted universe multiverse
 	deb-src http://mirrors.aliyun.com/ubuntu/ trusty-proposed main restricted universe multiverse
 	deb-src http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted universe multiverse
-aptå‚æ•°ï¼š
-	apt-get install xxx å®‰è£…xxx  ã€‚å¦‚æœå¸¦æœ‰å‚æ•°ï¼Œé‚£ä¹ˆ-d è¡¨ç¤ºä»…ä¸‹è½½ ï¼Œ-f è¡¨ç¤ºå¼ºåˆ¶å®‰è£…  
-	apt-get remove xxx å¸è½½xxx  
-	apt-get update æ›´æ–°è½¯ä»¶ä¿¡æ¯æ•°æ®åº“  
-	apt-get upgrade è¿›è¡Œç³»ç»Ÿå‡çº§  
-	apt-cache search æœç´¢è½¯ä»¶åŒ…
-unbuntuå®‰è£…åŒ…é»˜è®¤å­˜å‚¨ä½ç½®ï¼š
+apt²ÎÊı£º
+	apt-get install xxx °²×°xxx  ¡£Èç¹û´øÓĞ²ÎÊı£¬ÄÇÃ´-d ±íÊ¾½öÏÂÔØ £¬-f ±íÊ¾Ç¿ÖÆ°²×°  
+	apt-get remove xxx Ğ¶ÔØxxx  
+	apt-get update ¸üĞÂÈí¼şĞÅÏ¢Êı¾İ¿â  
+	apt-get upgrade ½øĞĞÏµÍ³Éı¼¶  
+	apt-cache search ËÑË÷Èí¼ş°ü
+unbuntu°²×°°üÄ¬ÈÏ´æ´¢Î»ÖÃ£º
 	/var/cache/apt/archives
-dpkgå®‰è£…è½¯ä»¶çš„æ–¹å¼:
-	dpkg -i package.deb 	å®‰è£…åŒ…
-	dpkg -r package 	åˆ é™¤åŒ…
-	dpkg -P package 	åˆ é™¤åŒ…ï¼ˆåŒ…æ‹¬é…ç½®æ–‡ä»¶ï¼‰
-	dpkg -L package 	åˆ—å‡ºä¸è¯¥åŒ…å…³è”çš„æ–‡ä»¶
-	dpkg -l package 	æ˜¾ç¤ºè¯¥åŒ…çš„ç‰ˆæœ¬
-	dpkg â€“unpack package.deb 	è§£å¼€ deb åŒ…çš„å†…å®¹
-	dpkg -S keyword 	æœç´¢æ‰€å±çš„åŒ…å†…å®¹
-	dpkg -l 	åˆ—å‡ºå½“å‰å·²å®‰è£…çš„åŒ…
-	dpkg -c package.deb 	åˆ—å‡º deb åŒ…çš„å†…å®¹
-	dpkg â€“configure package 	é…ç½®åŒ…
-å®‰è£…sshçš„å‘½ä»¤ï¼š
+dpkg°²×°Èí¼şµÄ·½Ê½:
+	dpkg -i package.deb 	°²×°°ü
+	dpkg -r package 	É¾³ı°ü
+	dpkg -P package 	É¾³ı°ü£¨°üÀ¨ÅäÖÃÎÄ¼ş£©
+	dpkg -L package 	ÁĞ³öÓë¸Ã°ü¹ØÁªµÄÎÄ¼ş
+	dpkg -l package 	ÏÔÊ¾¸Ã°üµÄ°æ±¾
+	dpkg ¨Cunpack package.deb 	½â¿ª deb °üµÄÄÚÈİ
+	dpkg -S keyword 	ËÑË÷ËùÊôµÄ°üÄÚÈİ
+	dpkg -l 	ÁĞ³öµ±Ç°ÒÑ°²×°µÄ°ü
+	dpkg -c package.deb 	ÁĞ³ö deb °üµÄÄÚÈİ
+	dpkg ¨Cconfigure package 	ÅäÖÃ°ü
+°²×°sshµÄÃüÁî£º
 	sudo apt-get install -y openssh-server
 	sudo apt-get install ufw
 	sudo ufw enable
 	sudo ufw allow 22
-å®‰è£…ç½‘ç»œå‘½ä»¤å·¥å…·:
+°²×°ÍøÂçÃüÁî¹¤¾ß:
 	sudo apt install net-tools
-æŸ¥çœ‹ç³»ç»ŸæœåŠ¡å‘½ä»¤ï¼š
+²é¿´ÏµÍ³·şÎñÃüÁî£º
 	sudo service --status-all
-æŸ¥çœ‹ç«¯å£çŠ¶æ€åŠå ç”¨ç¨‹åº
-	sudo netstat -ntulp|grep 3306 nè¡¨ç¤ºä¸è¿›è¡ŒdnsæŸ¥è¯¢ï¼Œtè¡¨ç¤ºtcpç¨‹åºï¼Œuè¡¨ç¤ºudpåè®®ï¼Œpè¡¨ç¤ºæ­£åœ¨ä½¿ç”¨çš„ç¨‹åºï¼Œlè¡¨ç¤ºæ­£åœ¨ç›‘å¬çš„ç¨‹åº
-æ€ä¹ˆå°†rpmæ ¼å¼çš„æ–‡ä»¶è½¬æˆdebæ–‡ä»¶ï¼š
+²é¿´¶Ë¿Ú×´Ì¬¼°Õ¼ÓÃ³ÌĞò
+	sudo netstat -ntulp|grep 3306 n±íÊ¾²»½øĞĞdns²éÑ¯£¬t±íÊ¾tcp³ÌĞò£¬u±íÊ¾udpĞ­Òé£¬p±íÊ¾ÕıÔÚÊ¹ÓÃµÄ³ÌĞò£¬l±íÊ¾ÕıÔÚ¼àÌıµÄ³ÌĞò
+ÔõÃ´½«rpm¸ñÊ½µÄÎÄ¼ş×ª³ÉdebÎÄ¼ş£º
 	sudo apt-get install alien
 	sudo alien xxx.rpm
-è‡ªåŠ¨æ¸…é™¤rcé…ç½®æ–‡ä»¶ï¼š
+×Ô¶¯Çå³ırcÅäÖÃÎÄ¼ş£º
 	dpkg -l |grep ^rc|awk '{print $2}' |sudo xargs dpkg -P
-éå¸¸æœ‰ç”¨çš„æ¸…ç†å‘½ä»¤ï¼š
-	sudo apt-get autoclean              æ¸…ç†æ—§ç‰ˆæœ¬çš„è½¯ä»¶ç¼“å­˜
-	sudo apt-get clean                  æ¸…ç†æ‰€æœ‰è½¯ä»¶ç¼“å­˜
-	sudo apt-get autoremove             åˆ é™¤ç³»ç»Ÿä¸å†ä½¿ç”¨çš„å­¤ç«‹è½¯ä»¶
-å®‰è£…æ’­æ”¾å™¨ï¼š
+·Ç³£ÓĞÓÃµÄÇåÀíÃüÁî£º
+	sudo apt-get autoclean              ÇåÀí¾É°æ±¾µÄÈí¼ş»º´æ
+	sudo apt-get clean                  ÇåÀíËùÓĞÈí¼ş»º´æ
+	sudo apt-get autoremove             É¾³ıÏµÍ³²»ÔÙÊ¹ÓÃµÄ¹ÂÁ¢Èí¼ş
+°²×°²¥·ÅÆ÷£º
 	sudo apt-get install smplayer
-Mysqlçš„ä¸€äº›å‘½ä»¤ï¼š
+MysqlµÄÒ»Ğ©ÃüÁî£º
 	CREATE USER 'dog'@'localhost' IDENTIFIED BY '123456';
 	CREATE USER 'pig'@'192.168.1.101_' IDENDIFIED BY '123456';
 	CREATE USER 'pig'@'%' IDENTIFIED BY '123456';
@@ -82,36 +82,36 @@ Mysqlçš„ä¸€äº›å‘½ä»¤ï¼š
 	SET PASSWORD FOR 'pig'@'%' = PASSWORD("123456");
 	REVOKE SELECT ON *.* FR @OM 'pig'@'%';
 	Delete FROM user Where User='test' and Host='localhost';
-	update mysql.user set password=password('ÃÃ‚ÃƒÃœÃ‚Ã«') where User="test" and Host="localhost";
+	update mysql.user set password=password('??????') where User="test" and Host="localhost";
 	mysqldump -u root -p restaurant >wp.sql
 	mysql -h 139.199.215.43 -P 10138 -uroot -pAiwm0109
 	select user,plugin from user;
 	skip-grant-table
 	update user set authentication_string=password("ln122920"),plugin='mysql_native_password' where user='root';
 	sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
-	mysqlåˆæ¬¡å®‰è£…æ²¡æœ‰å¯†ç è®¾ç½®
-		ä½¿ç”¨mysqladmin -uroot -p password
-	è§£å†³rootæƒé™æ‰èƒ½ç™»é™†çš„é—®é¢˜
+	mysql³õ´Î°²×°Ã»ÓĞÃÜÂëÉèÖÃ
+		Ê¹ÓÃmysqladmin -uroot -p password
+	½â¾örootÈ¨ÏŞ²ÅÄÜµÇÂ½µÄÎÊÌâ
 		alter user 'root'@'localhost' identified with mysql_native_password by 'your password'
-ifconfigé…ç½®ipï¼š
-è®¾ç½®æœåŠ¡å¼€æœºè‡ªå¯åŠ¨ï¼š
-	systemctl æœåŠ¡å enable
-	systemctl æœåŠ¡å disable
-zipçš„è§£å‹å’Œå‹ç¼©ï¼š
-	zip æ–‡ä»¶å.zip è¦å‹ç¼©çš„æ–‡ä»¶1 è¦å‹ç¼©çš„æ–‡ä»¶2 è¦å‹ç¼©çš„æ–‡ä»¶3
-	zip -d myfile.zip smart.txt åˆ é™¤å‹ç¼©æ–‡ä»¶ä¸­smart.txtæ–‡ä»¶
-	zip -m myfile.zip ./rpm_info.txt å‘å‹ç¼©æ–‡ä»¶ä¸­myfile.zipä¸­æ·»åŠ rpm_info.txtæ–‡ä»¶
-	uzip file.zip è§£å‹æ–‡ä»¶
-	unzip -v file.zip åªæŸ¥çœ‹æ–‡ä»¶é‡Œçš„ç›®å½•ï¼Œä½†ä¸è¦è§£å‹
-	unzip -n file.zip -d /home/ubuntu/yasuo ä¸è¦†ç›–åŸæ¥çš„æ–‡ä»¶å¹¶æŠŠæ–‡ä»¶è§£å‹åˆ°æŒ‡å®šçš„æ–‡ä»¶å¤¹ä¸‹
-tarè¿›è¡Œæ‰“åŒ…ï¼š
-	tar -cf filename.tar file1 file2 file3 åˆ›å»ºåä¸ºfilename.tarçš„æ–‡ä»¶
-	tar -tf filename.tar  æŸ¥çœ‹æ‰“åŒ…æ–‡ä»¶é‡Œçš„å†…å®¹
-	tar -xf filename.tar 	æŠ½å–æ‰“åŒ…æ–‡ä»¶çš„å†…å®¹
-	tar -zcf filename.gz.tar ä»¥gzipæ ¼å¼å‹ç¼©æ–‡ä»¶å¹¶æ‰“åŒ…
-gzipå‹ç¼©ï¼š
-	gzip -d finame è§£å‹æ–‡ä»¶
-ubuntué…ç½®é™æ€ipï¼š
+ifconfigÅäÖÃip£º
+ÉèÖÃ·şÎñ¿ª»ú×ÔÆô¶¯£º
+	systemctl ·şÎñÃû enable
+	systemctl ·şÎñÃû disable
+zipµÄ½âÑ¹ºÍÑ¹Ëõ£º
+	zip ÎÄ¼şÃû.zip ÒªÑ¹ËõµÄÎÄ¼ş1 ÒªÑ¹ËõµÄÎÄ¼ş2 ÒªÑ¹ËõµÄÎÄ¼ş3
+	zip -d myfile.zip smart.txt É¾³ıÑ¹ËõÎÄ¼şÖĞsmart.txtÎÄ¼ş
+	zip -m myfile.zip ./rpm_info.txt ÏòÑ¹ËõÎÄ¼şÖĞmyfile.zipÖĞÌí¼Órpm_info.txtÎÄ¼ş
+	uzip file.zip ½âÑ¹ÎÄ¼ş
+	unzip -v file.zip Ö»²é¿´ÎÄ¼şÀïµÄÄ¿Â¼£¬µ«²»Òª½âÑ¹
+	unzip -n file.zip -d /home/ubuntu/yasuo ²»¸²¸ÇÔ­À´µÄÎÄ¼ş²¢°ÑÎÄ¼ş½âÑ¹µ½Ö¸¶¨µÄÎÄ¼ş¼ĞÏÂ
+tar½øĞĞ´ò°ü£º
+	tar -cf filename.tar file1 file2 file3 ´´½¨ÃûÎªfilename.tarµÄÎÄ¼ş
+	tar -tf filename.tar  ²é¿´´ò°üÎÄ¼şÀïµÄÄÚÈİ
+	tar -xf filename.tar 	³éÈ¡´ò°üÎÄ¼şµÄÄÚÈİ
+	tar -zcf filename.gz.tar ÒÔgzip¸ñÊ½Ñ¹ËõÎÄ¼ş²¢´ò°ü
+gzipÑ¹Ëõ£º
+	gzip -d finame ½âÑ¹ÎÄ¼ş
+ubuntuÅäÖÃ¾²Ì¬ip£º
 	vim /etc/network/interfaces
 	auto enp0s25
 	iface enp0s25 inet static
@@ -120,39 +120,39 @@ ubuntué…ç½®é™æ€ipï¼š
 	gateway 172.20.32.1
 	sudo ifconfig enp0s25 down
 	sudo ifup ep0s25 
-ç”±é™æ€ipè½¬æˆåŠ¨æ€ipï¼š
+ÓÉ¾²Ì¬ip×ª³É¶¯Ì¬ip£º
 	sudo ifdown enp0s25 
 	sudo ifconfig enp0s25 up
-ubuntué…ç½®dnsæœåŠ¡å™¨
+ubuntuÅäÖÃdns·şÎñÆ÷
 	vim /etc/resolv.conf
 	nameserver 172.16.0.10
 	nameserver 172.16.0.11
  	nameserver 172.16.0.12
 	vim /etc/systemd/resolved.conf
-	ä¿®æ”¹DNS=dnsåœ°å€
-æˆ‘çš„macåœ°å€ï¼š
+	ĞŞ¸ÄDNS=dnsµØÖ·
+ÎÒµÄmacµØÖ·£º
 	c8:5b:76:12:06:81
-wumeiçš„macåœ°å€ï¼š	
+wumeiµÄmacµØÖ·£º	
 	54:AB:3A:84:14:92		 
-ç½‘ç»œæœåŠ¡æ‰€åœ¨çš„ä½ç½®ï¼š
+ÍøÂç·şÎñËùÔÚµÄÎ»ÖÃ£º
 	/etc/init.d/networking 
-	é‡å¯å®ƒç”¨ /etc/init.d/networking å°±å¯ä»¥äº†
-æ›´æ”¹macåœ°å€ï¼š
+	ÖØÆôËüÓÃ /etc/init.d/networking ¾Í¿ÉÒÔÁË
+¸ü¸ÄmacµØÖ·£º
 	ifconfig eth0 hw ether xx:xx:xx:xx:xx:xx
 	arp -i eth0 -s xxx.xxx.xxx.xxx(IP) xx.xx.xx.xx.xx(MAC)
-ubuntu jdkè·¯å¾„é…ç½®ï¼š
+ubuntu jdkÂ·¾¶ÅäÖÃ£º
 	export JAVA_HOME=/usr/lib/jdk1.8.0_211
 	export JRE_HOME=${JAVA_HOME}/jre
 	export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
 	export PATH=${JAVA_HOME}/bin:$PATH
-jdk æ”¾ç½®çš„è·¯å¾„ï¼š
+jdk ·ÅÖÃµÄÂ·¾¶£º
 	/usr/lib
-eclispe åŒ…æ”¾ç½®çš„è·¯å¾„
+eclispe °ü·ÅÖÃµÄÂ·¾¶
 	/opt
-eclispe æ¡Œé¢å›¾æ ‡æ”¾ç½®çš„è·¯å¾„ï¼š
+eclispe ×ÀÃæÍ¼±ê·ÅÖÃµÄÂ·¾¶£º
 	/usr/share/applications
-eclispe é…ç½®æ–¹æ³•
-	å›¾æ ‡é…ç½®
+eclispe ÅäÖÃ·½·¨
+	Í¼±êÅäÖÃ
 		Desktop Entry]
 			Encoding=UTF-8
 			Name=Eclipse
@@ -163,148 +163,148 @@ eclispe é…ç½®æ–¹æ³•
 			StartupNotify=true
 			Type=Application
 			Categories=Application;Development;
-	jreé…ç½®
+	jreÅäÖÃ
 		ln -s /usr/lib/jdk jre 
-		rm -rf jre //åˆ é™¤jreè½¯è¿æ¥ï¼Œä¸è¦å¸¦æ–œæ‰›â€˜/â€™ï¼Œå¸¦æ–œæ†ä¼šæŠŠåŸæ¥çš„binæ–‡ä»¶ä¹Ÿç»™åˆ äº†
-è™šæ‹Ÿç¯å¢ƒçš„ä½¿ç”¨
-	virtualenv scrapingEnv åˆ›å»ºè™šæ‹Ÿç¯å¢ƒ
+		rm -rf jre //É¾³ıjreÈíÁ¬½Ó£¬²»Òª´øĞ±¿¸¡®/¡¯£¬´øĞ±¸Ë»á°ÑÔ­À´µÄbinÎÄ¼şÒ²¸øÉ¾ÁË
+ĞéÄâ»·¾³µÄÊ¹ÓÃ
+	virtualenv scrapingEnv ´´½¨ĞéÄâ»·¾³
 	cd scrapingEnv/	
-	source bin/activate æ¿€æ´»è™šæ‹Ÿç¯å¢ƒ
-	deactivate é€€å‡ºè™šæ‹Ÿç¯å¢ƒ
-ç¡¬ç›˜æŒ‚è½½ï¼š
-	åˆ—å‡ºç¡¬ç›˜å¯¹è±¡ sudo fdisk -l
-	æ ¼å¼åŒ–ç¡¬ç›˜ sudo mkfs -t ext4 /dev/sda4
-	æŒ‚è½½ç¡¬ç›˜ mount /dev/sda4 /home/wp/baidunetdiskdownload
-	æ”¹ç¡¬ç›˜çš„åå­— e2label /dev/sda4 baidunetdisk
-	è®¾ç½®è‡ªåŠ¨æŒ‚è½½ sudo vim /etc/fstab åœ¨è¡Œå°¾æ·»åŠ  /dev/sda4 /home/wp/ubuntu/baidunetdiskdownload ext4 defaults 0 0
-grubå¼•å¯¼ä¿®å¤ï¼š
-	ç”¨ls (hhd0,åºå·)/boot/grubæˆ–è€…ls (hhd0.åºå·)/boot/grub æ‰¾å‡ºlinuxåˆ†åŒºæ‰€åœ¨çš„åœ°æ–¹
-	sudo root=(hhd0,åºå·)
-	sudo prefix=(hhd0,åºå·)/boot/grubæˆ–è€…ï¼ˆhdd0ï¼Œåºå·ï¼‰/grub
+	source bin/activate ¼¤»îĞéÄâ»·¾³
+	deactivate ÍË³öĞéÄâ»·¾³
+Ó²ÅÌ¹ÒÔØ£º
+	ÁĞ³öÓ²ÅÌ¶ÔÏó sudo fdisk -l
+	¸ñÊ½»¯Ó²ÅÌ sudo mkfs -t ext4 /dev/sda4
+	¹ÒÔØÓ²ÅÌ mount /dev/sda4 /home/wp/baidunetdiskdownload
+	¸ÄÓ²ÅÌµÄÃû×Ö e2label /dev/sda4 baidunetdisk
+	ÉèÖÃ×Ô¶¯¹ÒÔØ sudo vim /etc/fstab ÔÚĞĞÎ²Ìí¼Ó /dev/sda4 /home/wp/ubuntu/baidunetdiskdownload ext4 defaults 0 0
+grubÒıµ¼ĞŞ¸´£º
+	ÓÃls (hhd0,ĞòºÅ)/boot/grub»òÕßls (hhd0.ĞòºÅ)/boot/grub ÕÒ³ölinux·ÖÇøËùÔÚµÄµØ·½
+	sudo root=(hhd0,ĞòºÅ)
+	sudo prefix=(hhd0,ĞòºÅ)/boot/grub»òÕß£¨hdd0£¬ĞòºÅ£©/grub
 	insmod normal
 	normal
-	è¿›å…¥ç³»ç»Ÿåï¼Œsudo update-grub2
+	½øÈëÏµÍ³ºó£¬sudo update-grub2
 		sudo grub-install /dev/sda
-ubuntuæ§åˆ¶æ‰‹æœºçš„åŠæ³•ï¼š
-	Scrcpy å®‰è£…
+ubuntu¿ØÖÆÊÖ»úµÄ°ì·¨£º
+	Scrcpy °²×°
 		snap install scrcpy
-	adbæœåŠ¡å®‰è£…
+	adb·şÎñ°²×°
 		sudo apt-get install android-tools-adb
-	ç”¨lsusbæ¥æŸ¥çœ‹æ‰‹æœºusbè®¾å¤‡å·ï¼Œå‰å››ä½æ˜¯è®¾å¤‡å·
-	åˆ›å»ºè®¾å¤‡æ–‡ä»¶ï¼š
+	ÓÃlsusbÀ´²é¿´ÊÖ»úusbÉè±¸ºÅ£¬Ç°ËÄÎ»ÊÇÉè±¸ºÅ
+	´´½¨Éè±¸ÎÄ¼ş£º
 		mkdir ~/.android
 		echo 0x04e8 > ~/.android/adb_usb.ini
 		sudo touch /etc/udev/rules.d/android.rules
 		sudo gedit /etc/udev/rules.d/android.rules
-	åœ¨æ–‡ä»¶ä¸­è¾“å…¥:
+	ÔÚÎÄ¼şÖĞÊäÈë:
 		SUBSYSTEM=="usb", SYSFS{idVendor}=="04e8", MODE="0666"
-	ä¿å­˜åä¿®æ”¹æ–‡ä»¶æƒé™	
+	±£´æºóĞŞ¸ÄÎÄ¼şÈ¨ÏŞ	
 		sudo chmod 777 /etc/udev/rules.d/android.rules
-	å¯åŠ¨adbæœåŠ¡
+	Æô¶¯adb·şÎñ
 		service udev restart
-	æŸ¥çœ‹æ˜¯å¦æœ‰è®¾å¤‡æŒ‚è½½ä¸Šæ¥äº†
+	²é¿´ÊÇ·ñÓĞÉè±¸¹ÒÔØÉÏÀ´ÁË
 		adb devices
-	æœ€åå¯åŠ¨æœåŠ¡
+	×îºóÆô¶¯·şÎñ
 		scrcpy
-gitçš„å®‰è£…åŠä½¿ç”¨ï¼š
-	é…ç½®sshå¯†é’¥ï¼š
-		ssh-keygen -t rsa -C "youremail@example.com" ç„¶åå»gitgubä¸Šä¿å­˜è‡ªå·±çš„å¯†é’¥			
-		æ£€æŸ¥å¯†é’¥æ˜¯å¦é…ç½®ä¸Šå»
+gitµÄ°²×°¼°Ê¹ÓÃ£º
+	ÅäÖÃsshÃÜÔ¿£º
+		ssh-keygen -t rsa -C "youremail@example.com" È»ºóÈ¥gitgubÉÏ±£´æ×Ô¼ºµÄÃÜÔ¿			
+		¼ì²éÃÜÔ¿ÊÇ·ñÅäÖÃÉÏÈ¥
 			ssh -T git@github.com
-	æ‹‰å–ä»“åº“ï¼Œä½†ä¸åˆå¹¶åˆ°è‡ªå·±çš„ç›®å‰çš„åˆ†æ”¯
+	À­È¡²Ö¿â£¬µ«²»ºÏ²¢µ½×Ô¼ºµÄÄ¿Ç°µÄ·ÖÖ§
 		git fetch origin master
-	åˆå¹¶åˆ†æ”¯
+	ºÏ²¢·ÖÖ§
 		git merge origin master
-	ç›´æ¥æ‹‰å–
+	Ö±½ÓÀ­È¡
 		git pull origin master	
-	åˆ›å»ºæ–°çš„åˆ†æ”¯
-		git branch (åˆ†æ”¯å)
-	åˆ‡æ¢åˆ†æ”¯
-		git checkout(åˆ†æ”¯å)
-	åˆ‡æ¢åˆ°ä¸»åˆ†æ”¯ä»¥å
-		git merge (åˆ†æ”¯å)
-	é…ç½®githubç”¨æˆ·åå’Œé‚®ç®±åœ°å€
+	´´½¨ĞÂµÄ·ÖÖ§
+		git branch (·ÖÖ§Ãû)
+	ÇĞ»»·ÖÖ§
+		git checkout(·ÖÖ§Ãû)
+	ÇĞ»»µ½Ö÷·ÖÖ§ÒÔºó
+		git merge (·ÖÖ§Ãû)
+	ÅäÖÃgithubÓÃ»§ÃûºÍÓÊÏäµØÖ·
 		git config --global user.name "wpaiwm"
 		git config --global user.email "1228605963@qq.com"
-	åˆ›å»ºä¸€ä¸ªä»“åº“
+	´´½¨Ò»¸ö²Ö¿â
 		git init
-	æäº¤ä»£ç 
-		æäº¤å…¨éƒ¨
+	Ìá½»´úÂë
+		Ìá½»È«²¿
 			git add .
-		æ·»åŠ è¦æäº¤çš„æ–‡ä»¶
+		Ìí¼ÓÒªÌá½»µÄÎÄ¼ş
 			git add readme.txt
-		æäº¤
+		Ìá½»
  			git commit -m "Wrote a readme file"
 	
-	åœ¨ä½¿ç”¨äº†ä¿®æ”¹äº†æ–‡ä»¶ä»¥åï¼Œæƒ³çŸ¥é“æ–‡ä»¶æœ‰é‚£äº›æ”¹åŠ¨
-		æŸ¥çœ‹ä¿®æ”¹çš„ä½ç½®
+	ÔÚÊ¹ÓÃÁËĞŞ¸ÄÁËÎÄ¼şÒÔºó£¬ÏëÖªµÀÎÄ¼şÓĞÄÇĞ©¸Ä¶¯
+		²é¿´ĞŞ¸ÄµÄÎ»ÖÃ
 			git status
-		æŸ¥çœ‹å…·ä½“ä¿®æ”¹çš„å†…å®¹
+		²é¿´¾ßÌåĞŞ¸ÄµÄÄÚÈİ
 			git diff
-	åœ¨ä½¿ç”¨äº†git commitä»¥åï¼Œå¦‚ä½•æŸ¥çœ‹æ–‡ä»¶çš„æäº¤è®°å½•
-		æŸ¥çœ‹æäº¤æ—¥å¿—
+	ÔÚÊ¹ÓÃÁËgit commitÒÔºó£¬ÈçºÎ²é¿´ÎÄ¼şµÄÌá½»¼ÇÂ¼
+		²é¿´Ìá½»ÈÕÖ¾
 			git log
-		git logå‡ºæ¥çš„æ—¥å¿—åˆ†æ
+		git log³öÀ´µÄÈÕÖ¾·ÖÎö
 			commit defd8af52be5183dfceb3e5cf23f78ea47d013b0
 			Author: coder-pig <779878443@qq.com>
 			Date:   Fri Jun 19 17:00:36 2015 +0800
 			MainActivity Delete Menu
-			ä¾æ¬¡æ˜¯ï¼š
-		        æ­¤æ¬¡æäº¤å¯¹åº”çš„ç‰ˆæœ¬å·
-        		æäº¤äººï¼šå§“å é‚®ç®±
-        		æäº¤çš„æ—¶é—´
-        		æäº¤ç‰ˆæœ¬ä¿®æ”¹çš„å†…å®¹ï¼šå°±æ˜¯æˆ‘ä»¬commit -m "xxx"é‡Œçš„xxx
-	æ’¤é”€æœªgit addçš„ä¿®æ”¹
+			ÒÀ´ÎÊÇ£º
+		        ´Ë´ÎÌá½»¶ÔÓ¦µÄ°æ±¾ºÅ
+        		Ìá½»ÈË£ºĞÕÃû ÓÊÏä
+        		Ìá½»µÄÊ±¼ä
+        		Ìá½»°æ±¾ĞŞ¸ÄµÄÄÚÈİ£º¾ÍÊÇÎÒÃÇcommit -m "xxx"ÀïµÄxxx
+	³·ÏúÎ´git addµÄĞŞ¸Ä
 			git checkout src/com/jay/example/testforgit/MainActivity.java
-	æ’¤é”€å·²git addçš„ä¿®æ”¹
+	³·ÏúÒÑgit addµÄĞŞ¸Ä
 			git reset HEAD src/com/jay/example/testforgit/MainActivity.java
 			git checkout src/com/jay/example/testforgit/MainActivity.java	
-	å›é€€åˆ°æ–‡ä»¶çš„å‰ä¸€ä¸ªç‰ˆæœ¬
+	»ØÍËµ½ÎÄ¼şµÄÇ°Ò»¸ö°æ±¾
 			git reset --hard HEAD
 			git reset --hard HEAD^
  			git log
-	æ ¹æ®ç‰ˆæœ¬å·æ¥å›é€€
-			æŸ¥çœ‹æ‰€æœ‰ç‰ˆæœ¬å·
+	¸ù¾İ°æ±¾ºÅÀ´»ØÍË
+			²é¿´ËùÓĞ°æ±¾ºÅ
 				git reflog
-			å›é€€åˆ°æŒ‡å®šçš„ç‰ˆæœ¬å·
+			»ØÍËµ½Ö¸¶¨µÄ°æ±¾ºÅ
 
 				git reset --hard ad2080c
-	gitæäº¤åˆ°github
+	gitÌá½»µ½github
 		git init
 		git add .
 		git commit -m "first"
 		git remote add origin https://github.com/wpaiwm/1603.git
 		git push -u origin master
 		git pull --rebase origin master
-ubuntuæ­å»ºv2ray
-	æœåŠ¡ç«¯çš„æ­å»ºï¼š
-		åˆ©ç”¨è‡ªåŠ¨åŒ–è„šæœ¬æ­å»ºï¼š
+ubuntu´î½¨v2ray
+	·şÎñ¶ËµÄ´î½¨£º
+		ÀûÓÃ×Ô¶¯»¯½Å±¾´î½¨£º
 			sudo su
 			apt update && apt install -y curl
 			bash <(curl -L -s https://install.direct/go.sh)
-			å¯åŠ¨æœåŠ¡ï¼š
+			Æô¶¯·şÎñ£º
 				systemctl start v2ray
-			ç„¶åvim /etc/v2ray/config.json
-			é…ç½®å¦‚ä¸‹ï¼š
+			È»ºóvim /etc/v2ray/config.json
+			ÅäÖÃÈçÏÂ£º
 				{
   					"inbounds": [
     					 {
-      						"port": 443, // Vmess åè®®æœåŠ¡å™¨ç›‘å¬ç«¯å£
+      						"port": 443, // Vmess Ğ­Òé·şÎñÆ÷¼àÌı¶Ë¿Ú
       						"protocol": "vmess",
       						"settings": {
         						"clients": [
           							{
-            								"id": "b831381d-6324-4d53-ad4f-8cda48b30811" // id(UUID) éœ€è¦ä¿®æ”¹
+            								"id": "b831381d-6324-4d53-ad4f-8cda48b30811" // id(UUID) ĞèÒªĞŞ¸Ä
           							}
         						 ]
       						 }
     					 },
      					{
-      						"port": 444, // SS åè®®æœåŠ¡ç«¯ç›‘å¬ç«¯å£
+      						"port": 444, // SS Ğ­Òé·şÎñ¶Ë¼àÌı¶Ë¿Ú
      						"protocol": "shadowsocks",
       						"settings": {
-        						"method": "aes-128-gcm", // åŠ å¯†æ–¹å¼
-        						"password": "yuan.ga" //å¯†ç 
+        						"method": "aes-128-gcm", // ¼ÓÃÜ·½Ê½
+        						"password": "yuan.ga" //ÃÜÂë
       						}
     					}
   					],
@@ -315,9 +315,9 @@ ubuntuæ­å»ºv2ray
     						}
   					]
 				}
-				å…¶ä¸­vmessåè®®idå®¢æˆ·ç«¯å’ŒæœåŠ¡ç«¯è¦ä¿æŒä¸€è‡´ï¼Œidçš„ç”Ÿæˆå¯ä»¥ç”±https://www.uuidgenerator.net/ç½‘å€ç”Ÿæˆ
-maven å‘å¸ƒé¡¹ç›®åˆ°tomcat
-	åœ¨æ‰€åˆ›mavené¡¹ç›®çš„pom.xmlä¸­åŠ å…¥å¦‚ä¸‹ä»£ç 
+				ÆäÖĞvmessĞ­Òéid¿Í»§¶ËºÍ·şÎñ¶ËÒª±£³ÖÒ»ÖÂ£¬idµÄÉú³É¿ÉÒÔÓÉhttps://www.uuidgenerator.net/ÍøÖ·Éú³É
+maven ·¢²¼ÏîÄ¿µ½tomcat
+	ÔÚËù´´mavenÏîÄ¿µÄpom.xmlÖĞ¼ÓÈëÈçÏÂ´úÂë
 		<plugins>
 			<plugin>
 			    <groupId>org.apache.tomcat.maven</groupId>
@@ -332,117 +332,117 @@ maven å‘å¸ƒé¡¹ç›®åˆ°tomcat
 		     	</plugin>
 		 </plugins>
 
-	ç„¶ååœ¨tomcatå®‰è£…ç›®å½•ä¸‹çš„confæ–‡ä»¶å¤¹ä¸‹çš„tomcat-user.xmlå¤„åŠ å…¥å¦‚ä¸‹ä»£ç 
+	È»ºóÔÚtomcat°²×°Ä¿Â¼ÏÂµÄconfÎÄ¼ş¼ĞÏÂµÄtomcat-user.xml´¦¼ÓÈëÈçÏÂ´úÂë
 		<role rolename="manager"/>
 		<user username="tomcat" password="123456" roles="manager-script,tomcat,role1,admin,manager,manager-gui"/>
-mavené‡‡ç”¨java8ç¼–è¯‘
-	åœ¨æ‰€åœ¨é¡¹ç›®çš„pom.xmlä¸­åŠ å…¥å¦‚ä¸‹é…ç½®
+maven²ÉÓÃjava8±àÒë
+	ÔÚËùÔÚÏîÄ¿µÄpom.xmlÖĞ¼ÓÈëÈçÏÂÅäÖÃ
 		<properties>
-  		  <!-- ä½¿ç”¨java8çš„ç¼–è¯‘å™¨æ¥è¿›è¡Œç¼–è¯‘ -->
+  		  <!-- Ê¹ÓÃjava8µÄ±àÒëÆ÷À´½øĞĞ±àÒë -->
 		  <maven.compiler.target>1.8</maven.compiler.target>
   		  <maven.compiler.source>1.8</maven.compiler.source>
 		</properties>
-ubuntu18.0å®‰è£…æœç‹—è¾“å…¥æ³•
-    å®‰è£…fctixä¾èµ–
+ubuntu18.0°²×°ËÑ¹·ÊäÈë·¨
+    °²×°fctixÒÀÀµ
         sudo apt install fcitx-bin
         sudo apt install fcitx-table
-    å¸è½½æ‰ibus
+    Ğ¶ÔØµôibus
         sudo apt purge ibus
         sudo apt autoremove
-        é‡å¯ç”µè„‘
-    å®‰è£…æœç‹—æ‹¼éŸ³debåŒ…
+        ÖØÆôµçÄÔ
+    °²×°ËÑ¹·Æ´Òôdeb°ü
         sudo dpkg -i
-        å¦‚æœæ˜¾ç¤ºç¼ºå°‘ä¾èµ–çš„è¯ï¼Œå¯ä»¥ç”¨sudo apt install -fä¿®å¤
-        é‡å¯ç”µè„‘
-ubuntu18.0å®‰è£…rabbitmq
-	é¦–å…ˆæŠŠubuntuçš„é•œåƒæºæ”¹æˆé˜¿é‡Œçš„
-	å®‰è£…erlangä¾èµ–
+        Èç¹ûÏÔÊ¾È±ÉÙÒÀÀµµÄ»°£¬¿ÉÒÔÓÃsudo apt install -fĞŞ¸´
+        ÖØÆôµçÄÔ
+ubuntu18.0°²×°rabbitmq
+	Ê×ÏÈ°ÑubuntuµÄ¾µÏñÔ´¸Ä³É°¢ÀïµÄ
+	°²×°erlangÒÀÀµ
 		sudo apt-get install erlang-nox
-	å®‰è£…rabbitmq
+	°²×°rabbitmq
 		sudo apt-get update
 		sudo apt-get install rabbitmq-server
-	å¯åŠ¨ã€åœæ­¢ã€é‡å¯ã€çŠ¶æ€rabbitMqå‘½ä»¤
+	Æô¶¯¡¢Í£Ö¹¡¢ÖØÆô¡¢×´Ì¬rabbitMqÃüÁî
 		sudo rabbitmq-server start
 		sudo rabbitmq-server stop
 		sudo rabbitmq-server restart
 		sudo rabbitmq-server status
-	æ·»åŠ admin,å¹¶èµ‹äºˆadministratoræƒé™
+	Ìí¼Óadmin,²¢¸³ÓèadministratorÈ¨ÏŞ
 		sudo rabbitmqctl add_user admin admin
 		sudo rabbitmqctl set_user_tags admin administrator
-	èµ‹äºˆvirtual hostä¸­æ‰€æœ‰èµ„æºçš„é…ç½®ã€å†™ã€è¯»æƒé™ä»¥ä¾¿ç®¡ç†å…¶ä¸­çš„èµ„æº
+	¸³Óèvirtual hostÖĞËùÓĞ×ÊÔ´µÄÅäÖÃ¡¢Ğ´¡¢¶ÁÈ¨ÏŞÒÔ±ã¹ÜÀíÆäÖĞµÄ×ÊÔ´
 		sudo rabbitmqctl set_permissions -p / admin '.*' '.*' '.*'
-	ç™»å½•rabbitmq guiç•Œé¢
+	µÇÂ¼rabbitmq gui½çÃæ
 		cd /etc/rabbitmq
 		sudo rabbitmq-plugins enable rabbitmq_management
-		ç„¶åç”¨æµè§ˆå™¨è®¿é—® http://localhost:15672/	
-mysqlé…ç½®æ–‡ä»¶è¯¦è§£
-	# mysqlçš„shellè„šæœ¬ï¼Œç”¨æ¥å¯åŠ¨mysqlã€‚niceå‘½ä»¤æ˜¯ç”¨æ¥è®¾å®šä¼˜å…ˆæƒï¼Œ
+		È»ºóÓÃä¯ÀÀÆ÷·ÃÎÊ http://localhost:15672/	
+mysqlÅäÖÃÎÄ¼şÏê½â
+	# mysqlµÄshell½Å±¾£¬ÓÃÀ´Æô¶¯mysql¡£niceÃüÁîÊÇÓÃÀ´Éè¶¨ÓÅÏÈÈ¨£¬
 	[mysqld_safe]
 	socket      = /var/run/mysqld/mysqld.sock
 	nice        = 0
 	
 	[mysqld]
-	# mysqlç”¨å“ªä¸ªç”¨æˆ·å¯åŠ¨
+	# mysqlÓÃÄÄ¸öÓÃ»§Æô¶¯
 	user        = mysql
-	# å¯¹åº”çš„pidå’Œsockæ–‡ä»¶ä½ç½®
+	# ¶ÔÓ¦µÄpidºÍsockÎÄ¼şÎ»ÖÃ
 	pid-file    = /var/run/mysqld/mysqld.pid
 	socket      = /var/run/mysqld/mysqld.sock
-	# å¯¹åº”ç«¯å£ï¼Œæœ‰çš„å•æœºå¯å¤šä¸ªæœåŠ¡å™¨çš„ï¼Œæ¯ä¸ªæœåŠ¡å™¨è¦ç”¨ä¸åŒçš„ç«¯å£
+	# ¶ÔÓ¦¶Ë¿Ú£¬ÓĞµÄµ¥»úÆô¶à¸ö·şÎñÆ÷µÄ£¬Ã¿¸ö·şÎñÆ÷ÒªÓÃ²»Í¬µÄ¶Ë¿Ú
 	port        = 3306
-	# MySQLç›®å½•ï¼Œæ•°æ®ç›®å½•ï¼Œç¼“å­˜ç›®å½•ï¼Œubuntuä¿®æ”¹datadirè¿˜æœ‰ä¸ªå‘ï¼Œè§æˆ‘çš„æ”¶è—
+	# MySQLÄ¿Â¼£¬Êı¾İÄ¿Â¼£¬»º´æÄ¿Â¼£¬ubuntuĞŞ¸Ädatadir»¹ÓĞ¸ö¿Ó£¬¼ûÎÒµÄÊÕ²Ø
 	basedir     = /usr
 	datadir     = /data/mysql
 	tmpdir      = /tmp
-	# æ¶ˆæ¯é”™è¯¯çš„è¯­è¨€,å¯ä»¥çœ‹è¿™ç›®å½•ä¸‹çš„æ–‡ä»¶,ä¸€èˆ¬ä¸æ”¹
+	# ÏûÏ¢´íÎóµÄÓïÑÔ,¿ÉÒÔ¿´ÕâÄ¿Â¼ÏÂµÄÎÄ¼ş,Ò»°ã²»¸Ä
 	lc-messages-dir = /usr/share/mysql
-	# è·³è¿‡å¤–éƒ¨é”å®šï¼Œä»…å¯¹MyISAMå¼•æ“è¡¨æœ‰ç”¨
+	# Ìø¹ıÍâ²¿Ëø¶¨£¬½ö¶ÔMyISAMÒıÇæ±íÓĞÓÃ
 	skip-external-locking
-	# å…è®¸å¤–éƒ¨IPè®¿é—®ï¼Œå¦‚æœæ”¹æˆ0.0.0.0ï¼Œåˆ™æ¯ä¸ªå¤–éƒ¨æœåŠ¡å™¨éƒ½èƒ½è®¿é—®åˆ°ï¼Œæœ‰å®‰å…¨é—®é¢˜
+	# ÔÊĞíÍâ²¿IP·ÃÎÊ£¬Èç¹û¸Ä³É0.0.0.0£¬ÔòÃ¿¸öÍâ²¿·şÎñÆ÷¶¼ÄÜ·ÃÎÊµ½£¬ÓĞ°²È«ÎÊÌâ
 	bind-address        = 127.0.0.1
-	# MySQLæ‰€å…è®¸çš„åŒæ—¶ä¼šè¯æ•°ä¸Šé™ï¼Œå¦‚æœè¯¥å€¼è®¾çš„å°‘ï¼Œå¾ˆå®¹æ˜“å‡ºç° Too many connections
+	# MySQLËùÔÊĞíµÄÍ¬Ê±»á»°ÊıÉÏÏŞ£¬Èç¹û¸ÃÖµÉèµÄÉÙ£¬ºÜÈİÒ×³öÏÖ Too many connections
 	max_connections        = 1000
-	# æ¯ä¸ªå®¢æˆ·ç«¯è¿æ¥çš„æœ€å¤§é”™è¯¯å…è®¸æ•°ï¼Œå¦‚æœè¾¾åˆ°è¿™ä¸ªæ•°çš„é™åˆ¶ï¼Œè¿™ä¸ªå®¢æˆ·ç«¯å°†ä¼šè¢«MySQL
-	# æœåŠ¡é˜»æ­¢ç›´åˆ°æ‰§è¡Œ Flush Hosts æˆ–è€…æœåŠ¡é‡å¯
+	# Ã¿¸ö¿Í»§¶ËÁ¬½ÓµÄ×î´ó´íÎóÔÊĞíÊı£¬Èç¹û´ïµ½Õâ¸öÊıµÄÏŞÖÆ£¬Õâ¸ö¿Í»§¶Ë½«»á±»MySQL
+	# ·şÎñ×èÖ¹Ö±µ½Ö´ĞĞ Flush Hosts »òÕß·şÎñÖØÆô
 	max_connect_errors = 50
-	# è®¾ç½®æœ€å¤§åŒ…ï¼Œé™åˆ¶serveræ¥æ”¶çš„æ•°æ®åŒ…å¤§å°ï¼Œé¿å…è¶…é•¿SQLçš„æ‰§è¡Œé—®é¢˜
+	# ÉèÖÃ×î´ó°ü£¬ÏŞÖÆserver½ÓÊÕµÄÊı¾İ°ü´óĞ¡£¬±ÜÃâ³¬³¤SQLµÄÖ´ĞĞÎÊÌâ
 	max_allowed_packet = 16M
-	# å…³é”®è¯ç¼“å†²åŒºå¤§å°ï¼Œç”¨æ¥ç¼“å†²MyISAMè¡¨çš„ç´¢å¼•å—ï¼Œå†³å®šäº†æ•°æ®åº“ç´¢å¼•å¤„ç†çš„é€Ÿåº¦
-	# å°¤å…¶æ˜¯è¯»å–çš„é€Ÿåº¦
+	# ¹Ø¼ü´Ê»º³åÇø´óĞ¡£¬ÓÃÀ´»º³åMyISAM±íµÄË÷Òı¿é£¬¾ö¶¨ÁËÊı¾İ¿âË÷Òı´¦ÀíµÄËÙ¶È
+	# ÓÈÆäÊÇ¶ÁÈ¡µÄËÙ¶È
 	key_buffer_size     = 3M
 	thread_stack        = 192K
-	# æœåŠ¡ç«¯çº¿ç¨‹ç¼“å­˜
+	# ·şÎñ¶ËÏß³Ì»º´æ
 	thread_cache_size       = 300
-	# è¿™ä¸ªå€¼åº”è¯¥ä¸ºCPUæ ¸æ•°çš„ä¸¤å€ï¼Œç”¨äºå……åˆ†ä½¿ç”¨å¤šæ ¸æ€§èƒ½ã€‚
-	# è¿™ä¸ªå˜é‡æ˜¯é’ˆå¯¹Solarisç³»ç»Ÿçš„ï¼Œè€Œä¸”MYSQL5.6å°±å»æ‰äº†ï¼Œåƒä¸‡æ³¨æ„ï¼ï¼
+	# Õâ¸öÖµÓ¦¸ÃÎªCPUºËÊıµÄÁ½±¶£¬ÓÃÓÚ³ä·ÖÊ¹ÓÃ¶àºËĞÔÄÜ¡£
+	# Õâ¸ö±äÁ¿ÊÇÕë¶ÔSolarisÏµÍ³µÄ£¬¶øÇÒMYSQL5.6¾ÍÈ¥µôÁË£¬Ç§Íò×¢Òâ£¡£¡
 	#thread_concurrency = 4
-	# è‡ªåŠ¨ä¿®å¤MyISAMè¡¨ï¼Œæœ‰å‡ ä¸ªé€‰é¡¹ï¼Œè‡ªå·±æŸ¥é˜…æ–‡æ¡£å§
+	# ×Ô¶¯ĞŞ¸´MyISAM±í£¬ÓĞ¼¸¸öÑ¡Ïî£¬×Ô¼º²éÔÄÎÄµµ°É
 	myisam-recover-options  = BACKUP
-	# æ¯ä¸ªè¿æ¥éœ€è¦ç”¨åˆ°bufferæ—¶åˆ†é…çš„å†…å­˜å¤§å°ï¼Œè¿™ä¸ªå€¼ä¸æ˜¯è¶Šå¤§è¶Šå¥½ï¼Œé«˜å¹¶å‘ç”¨å¤§å€¼ï¼Œå®¹æ˜“
-	# å¯¼è‡´å†…å­˜è€—å°½ï¼Œç®€å•è®¡ç®—1000ä¸ªè¿æ¥æ—¶ç”¨1000*1m =1Gå†…å­˜
+	# Ã¿¸öÁ¬½ÓĞèÒªÓÃµ½bufferÊ±·ÖÅäµÄÄÚ´æ´óĞ¡£¬Õâ¸öÖµ²»ÊÇÔ½´óÔ½ºÃ£¬¸ß²¢·¢ÓÃ´óÖµ£¬ÈİÒ×
+	# µ¼ÖÂÄÚ´æºÄ¾¡£¬¼òµ¥¼ÆËã1000¸öÁ¬½ÓÊ±ÓÃ1000*1m =1GÄÚ´æ
 	sort_buffer_size = 1M
-	# joinè¡¨æ—¶ç”¨çš„ç¼“å­˜
+	# join±íÊ±ÓÃµÄ»º´æ
 	join_buffer_size = 8M
-	# å•æ¬¡æŸ¥è¯¢ç¼“å†²åŒºå¤§å°
+	# µ¥´Î²éÑ¯»º³åÇø´óĞ¡
 	query_cache_limit   = 2M
-	# æŸ¥è¯¢ç¼“å­˜å¤§å°ã€‚å½“ä¸€æ¬¡æŸ¥è¯¢å®Œäº†ä¹‹åï¼ŒMySQLä¼šæŠŠæŸ¥è¯¢çš„ç»“æœç¼“å­˜ï¼Œå½“ä¸‹æ¬¡æœ‰ç›¸åŒæŸ¥è¯¢
-	# å°±æŠŠç¼“å­˜ä¸­çš„ç»“æœç›´æ¥è¿”å›ã€‚ç‰¢è®°å¦‚æœå€¼è®¾å¤§äº†ï¼Œè€Œä½ çš„æ•°æ®åº“åœºæ™¯æ˜¯å¤šå†™ï¼Œä¼šå½±å“å†™å…¥
-	# çš„æ•ˆç‡ã€‚å…·ä½“çš„åŸå› æŸ¥é˜…æ–‡æ¡£
+	# ²éÑ¯»º´æ´óĞ¡¡£µ±Ò»´Î²éÑ¯ÍêÁËÖ®ºó£¬MySQL»á°Ñ²éÑ¯µÄ½á¹û»º´æ£¬µ±ÏÂ´ÎÓĞÏàÍ¬²éÑ¯
+	# ¾Í°Ñ»º´æÖĞµÄ½á¹ûÖ±½Ó·µ»Ø¡£ÀÎ¼ÇÈç¹ûÖµÉè´óÁË£¬¶øÄãµÄÊı¾İ¿â³¡¾°ÊÇ¶àĞ´£¬»áÓ°ÏìĞ´Èë
+	# µÄĞ§ÂÊ¡£¾ßÌåµÄÔ­Òò²éÔÄÎÄµµ
 	query_cache_size        = 128M
 	
-	# mysqlå¸¸è§„æ—¥å¿—ï¼Œç‰¢è®°çº¿ä¸Šç¯å¢ƒåˆ«è½»æ˜“å¼€å¯ï¼Œå†™å…¥çš„æ—¥å¿—é‡éå¸¸åºå¤§ã€‚
-	# å¦‚æœæœ‰ä»€ä¹ˆéœ€è¦è°ƒè¯•å’Œæ£€æŸ¥é”™è¯¯ï¼Œå¯ä»¥å¼€å¯ä¸€ä¸‹
+	# mysql³£¹æÈÕÖ¾£¬ÀÎ¼ÇÏßÉÏ»·¾³±ğÇáÒ×¿ªÆô£¬Ğ´ÈëµÄÈÕÖ¾Á¿·Ç³£ÅÓ´ó¡£
+	# Èç¹ûÓĞÊ²Ã´ĞèÒªµ÷ÊÔºÍ¼ì²é´íÎó£¬¿ÉÒÔ¿ªÆôÒ»ÏÂ
 	#general_log_file        = /var/log/mysql/mysql.log
 	#general_log             = 1
 	
-	# mysqlçš„é”™è¯¯æ—¥å¿—ï¼Œæœ‰åŠ©äºä½ æŸ¥è¯¢mysqlé—®é¢˜
+	# mysqlµÄ´íÎóÈÕÖ¾£¬ÓĞÖúÓÚÄã²éÑ¯mysqlÎÊÌâ
 	log_error = /var/log/mysql/error.log
 	
-	# mysqlçš„æ…¢æŸ¥è¯¢æ—¥å¿—ï¼Œå»ºè®®å¼€å¯ï¼Œä¸€èˆ¬è¶…è¿‡1ç§’å°±æ˜¯æ…¢æŸ¥è¯¢ï¼Œå¦‚æœæ‹…å¿ƒå¯ä»¥è®¾çš„é•¿ä¸€ç‚¹
+	# mysqlµÄÂı²éÑ¯ÈÕÖ¾£¬½¨Òé¿ªÆô£¬Ò»°ã³¬¹ı1Ãë¾ÍÊÇÂı²éÑ¯£¬Èç¹ûµ£ĞÄ¿ÉÒÔÉèµÄ³¤Ò»µã
 	#log_slow_queries   = /var/log/mysql/mysql-slow.log
 	#long_query_time = 2
 	#log-queries-not-using-indexes
 	
-	# å’Œbinlogç›¸å…³çš„ï¼Œæš‚ä¸å¤„ç†ï¼Œä¸»ä»å¤åˆ¶éœ€è¦ç”¨åˆ°
+	# ºÍbinlogÏà¹ØµÄ£¬Ôİ²»´¦Àí£¬Ö÷´Ó¸´ÖÆĞèÒªÓÃµ½
 	#server-id      = 1
 	#log_bin            = /var/log/mysql/mysql-bin.log
 	expire_logs_days    = 10
@@ -450,79 +450,79 @@ mysqlé…ç½®æ–‡ä»¶è¯¦è§£
 	#binlog_do_db       = include_database_name
 	#binlog_ignore_db   = include_database_name
 	
-	# è®¾ç½®åšMyISAMè¡¨å…¨è¡¨æ‰«ææ—¶çš„ç¼“å†²å¤§å°
+	# ÉèÖÃ×öMyISAM±íÈ«±íÉ¨ÃèÊ±µÄ»º³å´óĞ¡
 	read_buffer_size =2M
-	# åœ¨æ’åºåä»æ’åºå¥½çš„æ•°æ®è¯»å–è¡Œæ—¶ï¼Œè¡Œæ•°æ®ä»è¿™ä¸ªç¼“å­˜åŒºè¯»å‡ºï¼Œåˆç†è®¾ç½®è¿™ä¸ªå€¼ã€‚å¯ä»¥æå‡ 
-	# order byçš„æ€§èƒ½ã€‚æ³¨æ„ï¼šMySQLä¼šä¸ºæ¯ä¸ªå®¢æˆ·ç«¯è¿æ¥ç”³è¯·è¯¥ç¼“å†²åŒºï¼Œå¹¶å‘è¿‡å¤§ï¼Œè¯¥å€¼è¿‡å¤§ä¼š
-	# é€ æˆæ€§èƒ½å¼€é”€è¿‡å¤§
+	# ÔÚÅÅĞòºó´ÓÅÅĞòºÃµÄÊı¾İ¶ÁÈ¡ĞĞÊ±£¬ĞĞÊı¾İ´ÓÕâ¸ö»º´æÇø¶Á³ö£¬ºÏÀíÉèÖÃÕâ¸öÖµ¡£¿ÉÒÔÌáÉı 
+	# order byµÄĞÔÄÜ¡£×¢Òâ£ºMySQL»áÎªÃ¿¸ö¿Í»§¶ËÁ¬½ÓÉêÇë¸Ã»º³åÇø£¬²¢·¢¹ı´ó£¬¸ÃÖµ¹ı´ó»á
+	# Ôì³ÉĞÔÄÜ¿ªÏú¹ı´ó
 	read_rnd_buffer_size = 1M
-	# MyISAMè¡¨å‘ç”Ÿå˜åŒ–æ—¶å€™é‡æ–°æ’åºéœ€è¦çš„ç¼“å­˜
+	# MyISAM±í·¢Éú±ä»¯Ê±ºòÖØĞÂÅÅĞòĞèÒªµÄ»º´æ
 	myisam_sort_buffer_size = 8M
 	
-	# innodbç”¨æ¥ç¼“å­˜æ¥ä¿å­˜ç´¢å¼•å’ŒåŸå§‹æ•°æ®ï¼Œæ­£ç¡®è®¾ç½®è¿™ä¸ªå€¼ï¼Œå¯ä»¥æœ‰æ•ˆå‡å°‘è¯»å–æ•°æ®éœ€è¦çš„ç£ç›˜# IOï¼Œæ¯”å¦‚ä¹¦é‡Œé¢è®¾ç½®çš„æ•°æ®æ˜¯4G
+	# innodbÓÃÀ´»º´æÀ´±£´æË÷ÒıºÍÔ­Ê¼Êı¾İ£¬ÕıÈ·ÉèÖÃÕâ¸öÖµ£¬¿ÉÒÔÓĞĞ§¼õÉÙ¶ÁÈ¡Êı¾İĞèÒªµÄ´ÅÅÌ# IO£¬±ÈÈçÊéÀïÃæÉèÖÃµÄÊı¾İÊÇ4G
 	innodb_buffer_pool_size = 128M
-	# æ•°æ®æ—¥å¿—æ–‡ä»¶çš„å¤§å°ã€‚
+	# Êı¾İÈÕÖ¾ÎÄ¼şµÄ´óĞ¡¡£
 	innodb_log_file_size = 128M
-	# æ—¥å¿—æ–‡ä»¶çš„ç¼“å­˜
+	# ÈÕÖ¾ÎÄ¼şµÄ»º´æ
 	innodb_log_buffer_size = 8M
-	# é¢„å†™æ—¥å¿—çš„æ–¹å¼ï¼Œå¤æ‚ï¼Œè‡ªå·±çœ‹æ–‡æ¡£å§
+	# Ô¤Ğ´ÈÕÖ¾µÄ·½Ê½£¬¸´ÔÓ£¬×Ô¼º¿´ÎÄµµ°É
 	innodb_flush_log_at_trx_commit =1
-	# å†è¢«å›æ»šä¹‹å‰ï¼Œä¸€ä¸ªinnodbçš„äº‹åŠ¡åº”è¯¥ç­‰ä¸€ä¸ªé”è¢«æ‰¹å‡†å¤šä¹…ã€‚å¦‚æœç”¨äº†lock tablesè¿™ç§æŒ‡ä»¤
-	# è¿™æ—¶è¿™ä¸ªè¶…æ—¶å°±éå¸¸æœ‰æ•ˆæœ
+	# ÔÙ±»»Ø¹öÖ®Ç°£¬Ò»¸öinnodbµÄÊÂÎñÓ¦¸ÃµÈÒ»¸öËø±»Åú×¼¶à¾Ã¡£Èç¹ûÓÃÁËlock tablesÕâÖÖÖ¸Áî
+	# ÕâÊ±Õâ¸ö³¬Ê±¾Í·Ç³£ÓĞĞ§¹û
 	innodb_lock_wait_timeout =50
-æ‰‹åŠ¨å®‰è£…mysql
-        å…ˆä»¥rootç”¨æˆ·ç™»å½•
+ÊÖ¶¯°²×°mysql
+        ÏÈÒÔrootÓÃ»§µÇÂ¼
 		sudo su
-	å°†è§£å‹å¥½çš„æ–‡ä»¶æ”¾åˆ°/usr/localç›®å½•ä¸‹
+	½«½âÑ¹ºÃµÄÎÄ¼ş·Åµ½/usr/localÄ¿Â¼ÏÂ
 		tar -xvf mysql-5.6.34-linux-glibc2.5-x86_64.tar
-		mv è§£å‹å‡ºæ¥çš„æ–‡ä»¶å¤¹å /usr/local/mysql
-	æ–°å»ºmysqlç”¨æˆ·ç»„
+		mv ½âÑ¹³öÀ´µÄÎÄ¼ş¼ĞÃû /usr/local/mysql
+	ĞÂ½¨mysqlÓÃ»§×é
 		groupadd mysql
 		useradd -g mysql mysql
-	æ–°å»º/etc/my.cnfï¼Œå¹¶æ·»åŠ å¦‚ä¸‹é…ç½®
+	ĞÂ½¨/etc/my.cnf£¬²¢Ìí¼ÓÈçÏÂÅäÖÃ
 		vim /etc/my.cnf && sudo chmod 777 /etc/my.cnf
 		[mysql]
-		# è®¾ç½®mysqlå®¢æˆ·ç«¯é»˜è®¤å­—ç¬¦é›†
+		# ÉèÖÃmysql¿Í»§¶ËÄ¬ÈÏ×Ö·û¼¯
 		default-character-set=utf8 
 		socket=/var/lib/mysql/mysql.sock
 
 		[mysqld]
-		skip-grant-tables  #è·³è¿‡å¯†ç éªŒè¯
+		skip-grant-tables  #Ìø¹ıÃÜÂëÑéÖ¤
 		skip-name-resolve
-		#è®¾ç½®3306ç«¯å£
+		#ÉèÖÃ3306¶Ë¿Ú
 		port = 3306 
 		socket=/var/lib/mysql/mysql.sock
-		# è®¾ç½®mysqlçš„å®‰è£…ç›®å½•
+		# ÉèÖÃmysqlµÄ°²×°Ä¿Â¼
 		basedir=/usr/local/mysql
-		# è®¾ç½®mysqlæ•°æ®åº“çš„æ•°æ®çš„å­˜æ”¾ç›®å½•
+		# ÉèÖÃmysqlÊı¾İ¿âµÄÊı¾İµÄ´æ·ÅÄ¿Â¼
 		datadir=/usr/local/mysql/data
-		# å…è®¸æœ€å¤§è¿æ¥æ•°
+		# ÔÊĞí×î´óÁ¬½ÓÊı
 		max_connections=200
-		# æœåŠ¡ç«¯ä½¿ç”¨çš„å­—ç¬¦é›†é»˜è®¤ä¸º8æ¯”ç‰¹ç¼–ç çš„latin1å­—ç¬¦é›†
+		# ·şÎñ¶ËÊ¹ÓÃµÄ×Ö·û¼¯Ä¬ÈÏÎª8±ÈÌØ±àÂëµÄlatin1×Ö·û¼¯
 		character-set-server=utf8
-		# åˆ›å»ºæ–°è¡¨æ—¶å°†ä½¿ç”¨çš„é»˜è®¤å­˜å‚¨å¼•æ“
+		# ´´½¨ĞÂ±íÊ±½«Ê¹ÓÃµÄÄ¬ÈÏ´æ´¢ÒıÇæ
 		default-storage-engine=INNODB
 		lower_case_table_name=1
 		max_allowed_packet=16M
-	ä¿®æ”¹mysqlç›®å½•çš„æ‰€æœ‰è€…ï¼Œå¹¶åˆå§‹åŒ–æ•°æ®åº“
+	ĞŞ¸ÄmysqlÄ¿Â¼µÄËùÓĞÕß£¬²¢³õÊ¼»¯Êı¾İ¿â
 		cd /usr/local/mysql
 		chown -R mysql:mysql ./
 		./scripts/mysql_install_db --user=mysql --basedir=/usr/local/mysql/ --datadir=/usr/local/mysql/data/
-		ä¸­é—´æç¤ºä¾èµ–é—®é¢˜ï¼Œå®‰è£…å°±å¯ä»¥äº†
-	ä¿®æ”¹dataç›®å½•ç”¨æˆ·æ‰€æœ‰è€…
+		ÖĞ¼äÌáÊ¾ÒÀÀµÎÊÌâ£¬°²×°¾Í¿ÉÒÔÁË
+	ĞŞ¸ÄdataÄ¿Â¼ÓÃ»§ËùÓĞÕß
 		chown -R mysql:mysql data
-	åˆ›å»ºmysql socketé€šä¿¡ç›®å½•
+	´´½¨mysql socketÍ¨ĞÅÄ¿Â¼
 		sudo mkdir /var/lib/mysql && sudo chmod 777 /var/lib/mysql
-	å°†mysqlå¯åŠ¨æœåŠ¡æ”¾åˆ°ç³»ç»Ÿç›®å½•ä¸‹
-		cp /usr/local/mysql/support-files/mysql.server /etc/init.d/mysql	å»ºç«‹è½¯é“¾æ¥
+	½«mysqlÆô¶¯·şÎñ·Åµ½ÏµÍ³Ä¿Â¼ÏÂ
+		cp /usr/local/mysql/support-files/mysql.server /etc/init.d/mysql	½¨Á¢ÈíÁ´½Ó
 		ln -s  /usr/local/mysql/bin/mysql    /usr/bin	
-	é…ç½®mysql
+	ÅäÖÃmysql
 		cp ./support-files/mysql.server /etc/rc.d/init.d/mysqld
 		chmod +x /etc/rc.d/init.d/mysqld
 		sysv-rc-conf mysqld on
 		vim /etc/profile
 		export PATH=$PATH:/usr/local/mysql/bin
-é˜¿é‡Œäº‘é•œåƒæº
+°¢ÀïÔÆ¾µÏñÔ´
 	deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
 	deb-src http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
 	deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
@@ -533,20 +533,20 @@ mysqlé…ç½®æ–‡ä»¶è¯¦è§£
 	deb-src http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
 	deb http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
 	deb-src http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
-ubuntuä¸‹æŸ¥çœ‹å›¾ç‰‡
+ubuntuÏÂ²é¿´Í¼Æ¬
 	xdg-open filename.png
-ubuntuå°†å·¦è¾¹çš„æ¡è®¾ç½®éšè—è°ƒåˆ°åº•éƒ¨
-	é¦–å…ˆå®‰è£…ä¸¤ä¸ªå·¥å…·
+ubuntu½«×ó±ßµÄÌõÉèÖÃÒş²Øµ÷µ½µ×²¿
+	Ê×ÏÈ°²×°Á½¸ö¹¤¾ß
 		sudo apt-get install gnome-tweak-tool
 		sudo apt-get install gnome-shell-extension-dashtodock
-	é‡å¯ç”µè„‘
-		åœ¨å‘½ä»¤è¡Œè¾“å…¥gnome-tweaks
-		åœ¨ç•Œé¢çš„æ‰©å±•é‡Œè®¾ç½®ç›¸å…³é€‰é¡¹
-ubuntuä½¿ç”¨ç™¾åº¦ç½‘ç›˜ä¸€ç›´å¡åœ¨åŠ è½½ç•Œé¢çš„è§£å†³åŠæ³•
-	åˆ é™¤ä¸»ç›®å½•çš„baidunetdiskç›®å½•
+	ÖØÆôµçÄÔ
+		ÔÚÃüÁîĞĞÊäÈëgnome-tweaks
+		ÔÚ½çÃæµÄÀ©Õ¹ÀïÉèÖÃÏà¹ØÑ¡Ïî
+ubuntuÊ¹ÓÃ°Ù¶ÈÍøÅÌÒ»Ö±¿¨ÔÚ¼ÓÔØ½çÃæµÄ½â¾ö°ì·¨
+	É¾³ıÖ÷Ä¿Â¼µÄbaidunetdiskÄ¿Â¼
 	cd ~
 	rm -r baidunetdisk
-ideaå’Œwebstorm vimå¿«æ·é”®é…ç½®
+ideaºÍwebstorm vim¿ì½İ¼üÅäÖÃ
 	imap <A-k> <Up>
 	imap <A-j> <Down>
 	imap <A-h> <Left>
@@ -554,34 +554,34 @@ ideaå’Œwebstorm vimå¿«æ·é”®é…ç½®
 	imap <A-o>  <Esc>o
 	imap <A-;> <Esc>
 	map  <A-;> <Esc>
-ubuntuå»é™¤é¡¶éƒ¨å¯¼èˆªæ çš„æ–¹æ³•
-	è®¿é—®https://extensions.gnome.org/extension/545/hide-top-bar/ å®‰è£…hide-top-bar
-	å®‰è£…chrome-gnome-shell
+ubuntuÈ¥³ı¶¥²¿µ¼º½À¸µÄ·½·¨
+	·ÃÎÊhttps://extensions.gnome.org/extension/545/hide-top-bar/ °²×°hide-top-bar
+	°²×°chrome-gnome-shell
 		sudo apt install chrome-gnome-shell
-	åœ¨ä¹‹å‰çš„ç½‘é¡µå°†hide-top-barçš„å¼€å…³æ‰“å¼€ å°±å¯ä»¥é…ç½®äº†	
+	ÔÚÖ®Ç°µÄÍøÒ³½«hide-top-barµÄ¿ª¹Ø´ò¿ª ¾Í¿ÉÒÔÅäÖÃÁË	
 		
-hongkong ipåœ°å€
+hongkong ipµØÖ·
 	119.28.228.157
-mysql ipåœ°å€å’Œç«¯å£
+mysql ipµØÖ·ºÍ¶Ë¿Ú
 	139.199.215.43 10138
-ubuntu18.0å®‰è£…redis
+ubuntu18.0°²×°redis
 	sudo apt-get install redis-server
-ubuntuå¼€å¯çƒ­ç‚¹
-       å‘½ä»¤è¡Œè¾“å…¥nm-connection-editorï¼Œç„¶åç‚¹å‡»ä¸‹æ–¹çš„æ–°å»ºwifiï¼Œé€‰æ‹©hotspot
-biz2æ–‡ä»¶çš„ä½¿ç”¨
+ubuntu¿ªÆôÈÈµã
+       ÃüÁîĞĞÊäÈënm-connection-editor£¬È»ºóµã»÷ÏÂ·½µÄĞÂ½¨wifi£¬Ñ¡Ôñhotspot
+biz2ÎÄ¼şµÄÊ¹ÓÃ
 	.bz2 
-		è§£å‹1ï¼šbzip2 -d FileName.bz2 
-		è§£å‹2ï¼šbunzip2 FileName.bz2 
-		å‹ç¼©ï¼š bzip2 -z FileName 
+		½âÑ¹1£ºbzip2 -d FileName.bz2 
+		½âÑ¹2£ºbunzip2 FileName.bz2 
+		Ñ¹Ëõ£º bzip2 -z FileName 
 	.tar.bz2 
-	è§£å‹ï¼štar jxvf FileName.tar.bz2 #æ˜¾ç¤ºè§£å‹è¯¦ç»†è¿‡ç¨‹       æˆ–tar --bzip xvf FileName.tar.bz2 #ä¸æ˜¾ç¤ºè§£å‹è¯¦ç»†è¿‡ç¨‹
-	å‹ç¼©ï¼štar jcvf FileName.tar.bz2 DirName 
-ubuntuå¥½ç”¨çš„æˆªå›¾å·¥å…·
+	½âÑ¹£ºtar jxvf FileName.tar.bz2 #ÏÔÊ¾½âÑ¹ÏêÏ¸¹ı³Ì       »òtar --bzip xvf FileName.tar.bz2 #²»ÏÔÊ¾½âÑ¹ÏêÏ¸¹ı³Ì
+	Ñ¹Ëõ£ºtar jcvf FileName.tar.bz2 DirName 
+ubuntuºÃÓÃµÄ½ØÍ¼¹¤¾ß
 	sudo apt-get install flameshot	
-	åœ¨ubuntuè®¾ç½®ç•Œé¢é‡Œæ·»åŠ å¿«æ·é”®
-chromeè‡ªåŠ¨ä»£ç†æ’ä»¶
+	ÔÚubuntuÉèÖÃ½çÃæÀïÌí¼Ó¿ì½İ¼ü
+chrome×Ô¶¯´úÀí²å¼ş
 	Proxy SwitchyOmega	
-ubuntuæ–‡ä»¶æ•°é‡è¿‡å¤šçš„è§£å†³åŠæ³•
+ubuntuÎÄ¼şÊıÁ¿¹ı¶àµÄ½â¾ö°ì·¨
 	Listen uses inotify by default on Linux to monitor directories for changes. It's not uncommon to encounter a system limit on the number of files you can monitor. For example, Ubuntu Lucid's (64bit) inotify limit is set to 8192.
 
 	You can get your current inotify file watch limit by executing:
@@ -598,15 +598,15 @@ ubuntuæ–‡ä»¶æ•°é‡è¿‡å¤šçš„è§£å†³åŠæ³•
 	$ echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf
 	$ sudo sysctl -p
 	You may also need to pay attention to the values of max_queued_events and max_user_instances if Listen keeps on complaining.
-ubuntuç¼–è¾‘grubç•Œé¢çš„åŠæ³•
-	æ”¹å˜é»˜è®¤å…‰æ ‡çš„ä½ç½®
+ubuntu±à¼­grub½çÃæµÄ°ì·¨
+	¸Ä±äÄ¬ÈÏ¹â±êµÄÎ»ÖÃ
 		vim /etc/default/grub
-		åœ¨é‡Œé¢çš„defaulté€‰é¡¹æ”¹å˜æ•°å­—é»˜è®¤æ˜¯0å¼€å§‹ï¼Œä¸€èˆ¬windowsæ˜¯4
-	æ”¹å˜ç•Œé¢é‡Œæ–‡å­—æ˜¾ç¤ºçš„é¡ºåº
-		vim /boot/grub/grub.cfg å°†é‡Œé¢çš„windowsèœå•ç²˜è´´åˆ°Ubuntuèœå•ä¹‹å‰å°±å¯ä»¥äº†
-ubuntu18è®¾ç½®é™æ€ipå’Œdns
+		ÔÚÀïÃæµÄdefaultÑ¡Ïî¸Ä±äÊı×ÖÄ¬ÈÏÊÇ0¿ªÊ¼£¬Ò»°ãwindowsÊÇ4
+	¸Ä±ä½çÃæÀïÎÄ×ÖÏÔÊ¾µÄË³Ğò
+		vim /boot/grub/grub.cfg ½«ÀïÃæµÄwindows²Ëµ¥Õ³Ìùµ½Ubuntu²Ëµ¥Ö®Ç°¾Í¿ÉÒÔÁË
+ubuntu18ÉèÖÃ¾²Ì¬ipºÍdns
 		vim /etc/netplan/01-network-manager-all.yaml  
-			åœ¨é‡Œé¢å†™ä¸‹å¦‚æ­¤çš„é€‰é¡¹,è¦æ³¨æ„yamlè¯­æ³•çˆ¶é¡¹ä¸‹çš„å­é¡¹é¦–è¡Œè¦ç¼©è¿›å››ä¸ªç©ºæ ¼
+			ÔÚÀïÃæĞ´ÏÂÈç´ËµÄÑ¡Ïî,Òª×¢ÒâyamlÓï·¨¸¸ÏîÏÂµÄ×ÓÏîÊ×ĞĞÒªËõ½øËÄ¸ö¿Õ¸ñ
 				# Let NetworkManager manage all devices on this system
 				network:
     				version: 2
@@ -620,7 +620,23 @@ ubuntu18è®¾ç½®é™æ€ipå’Œdns
                 				addresses: [114.114.114.114] 
        sudo netplan apply
 
-ubuntuå‘½ä»¤è¡Œç»ˆç«¯è®©æ‰€æœ‰çš„åè®®éƒ½èµ°socksä»£ç†
+ubuntuÃüÁîĞĞÖÕ¶ËÈÃËùÓĞµÄĞ­Òé¶¼×ßsocks´úÀí
 	export ALL_PROXY="socks:127.0.0.1:8080"
-ubuntuæŒ‚è½½ç¡¬ç›˜æ€ä¹ˆä¸è®©ç¡¬ç›˜å›¾æ ‡å‡ºç°åœ¨æ¡Œé¢ä¸Š
-	å°†ç›®å½•å»ºåœ¨æ ¹ç›®å½•ä¸‹ï¼Œç„¶åå°†ç¡¬ç›˜æŒ‚è½½ä¸Šæ¥ï¼Œç„¶åå¯¹æ ¹ç›®å½•ä¸‹çš„ç›®å½•è¿›è¡Œè½¯é“¾æ¥
+ubuntu¹ÒÔØÓ²ÅÌÔõÃ´²»ÈÃÓ²ÅÌÍ¼±ê³öÏÖÔÚ×ÀÃæÉÏ
+	½«Ä¿Â¼½¨ÔÚ¸ùÄ¿Â¼ÏÂ£¬È»ºó½«Ó²ÅÌ¹ÒÔØÉÏÀ´£¬È»ºó¶Ô¸ùÄ¿Â¼ÏÂµÄÄ¿Â¼½øĞĞÈíÁ´½Ó
+ubuntu°²×°dash to dock
+	Ê×ÏÈ°²×°chromeÀïµÄgnmoe-shell-extentions
+	È»ºó°²×°sudo apt-get install chrome-gnome-shell
+	sudo apt-get install gnome-shell-extensions
+	×îºóÔÙÔÚchrmoeÀ©Õ¹Àï°²×°dash to dock
+ubuntu×Ô¶¨Òå¿ª»ú¶¯»­
+	sudo apt install plymouth-themes
+	È»ºóµ½org.gnome.themesÈ¥ÏÂÔØÒ»¸öMacOs bootµÄÖ÷Ìâ
+	sudo update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/"path/to-your-plymouth.plymouth" 100
+	sudo update-alternatives --config default.plymouth
+	sudo update-initramfs  -u
+mysql´´½¨ĞÂÓÃ»§
+	msyql -u root -p; //ÒÔrootÓÃ»§µÇÂ¼
+	CREATE USER 'kme_15k'@'localhost' IDENTIFIED BY '123456';  //´´½¨ĞÂÓÃ»§,kme_15kÊÇÓÃ»§Ãû£¬ÃÜÂë123456
+	GRANT ALL ON *.* TO 'kme_15k'@'localhost';   //Ìí¼ÓËùÓĞÈ¨ÏŞ
+	flush privileges; //×îºóÕâ¾ä±Ø²»¿ÉÉÙ£¬Ë¢ĞÂÊı¾İ¿â
