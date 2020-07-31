@@ -640,3 +640,22 @@ mysql创建新用户
 	CREATE USER 'kme_15k'@'localhost' IDENTIFIED BY '123456';  //创建新用户,kme_15k是用户名，密码123456
 	GRANT ALL ON *.* TO 'kme_15k'@'localhost';   //添加所有权限
 	flush privileges; //最后这句必不可少，刷新数据库
+解决vim打开文件乱码的问题
+	set termencoding=utf-8
+	set encoding=utf8
+	set fileencodings=utf8,ucs-bom,gbk,cp936,gb2312,gb18030	
+xp sp2 秘钥
+	BX6HT-MDJKW-H2J4X-BX67W-TVVFG
+mysql导出数据和结构
+	导出整个数据库结构和数据
+	mysqldump -h localhost -uroot -p123456 database > dump.sql
+	导出单个数据表结构和数据
+	mysqldump -h localhost -uroot -p123456  database table > dump.sql
+	导出整个数据库结构（不包含数据）
+	mysqldump -h localhost -uroot -p123456  -d database > dump.sql
+	导出单个数据表结构（不包含数据）
+	mysqldump -h localhost -uroot -p123456  -d database table > dump.sql
+	-d 参数用来指定只导出表结构；
+	-t 参数用来指定只导出表数据；
+	两个都不写，既导出表结构又导出表数据；
+	不指定表名，则导出全库
