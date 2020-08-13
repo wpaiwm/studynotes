@@ -362,10 +362,10 @@ ubuntu18.0安装rabbitmq
 		sudo apt-get update
 		sudo apt-get install rabbitmq-server
 	启动、停止、重启、状态rabbitMq命令
-		sudo rabbitmq-server start
-		sudo rabbitmq-server stop
-		sudo rabbitmq-server restart
-		sudo rabbitmq-server status
+		sudo service rabbitmq-server start
+		sudo service rabbitmq-server stop
+		sudo service rabbitmq-server restart
+		sudo service rabbitmq-server status
 	添加admin,并赋予administrator权限
 		sudo rabbitmqctl add_user admin admin
 		sudo rabbitmqctl set_user_tags admin administrator
@@ -659,3 +659,74 @@ mysql导出数据和结构
 	-t 参数用来指定只导出表数据；
 	两个都不写，既导出表结构又导出表数据；
 	不指定表名，则导出全库
+安装vsftp
+	sudo apt-get install vsftpd
+	sudo useradd -m wpftp -d /home/wpftp -s /sbin/nologin
+	sudo passwd ftpuser
+	sudo mkdir /home/wpftp/pub
+	sudo chmod a-w /home/wpftp && chmod 777 -R /home/wpftp/pub
+	sudo rm /etc/pam.d/vsftpd
+	sudo vim /etc/vsftpd.conf
+	添加如下配置
+		listen=YES
+		listen_ipv6=NO
+		anonymous_enable=NO
+		local_enable=YES
+		write_enable=YES
+		local_umask=022
+		dirmessage_enable=YES
+		use_localtime=YES
+		xferlog_enable=YES
+		connect_from_port_20=YES
+		chroot_local_user=YES
+		secure_chroot_dir=/var/run/vsftpd/empty
+		pam_service_name=vsftpd
+		rsa_cert_file=/etc/ssl/certs/ssl-cert-snakeoil.pem
+		rsa_private_key_file=/etc/ssl/private/ssl-cert-snakeoil.key
+		ssl_enable=NO
+		pasv_enable=Yes
+		pasv_min_port=10000
+		pasv_max_port=10100
+		allow_writeable_chroot=YES
+      实时监控日志
+	tail -f /var/log/vsftpd.log
+nvm的使用
+	curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+	source ~/.bashrc
+	command -v nvm    # 安装成功会打印 nvm；失败什么也不打印	
+	nvm install v8.11.2
+	# 也可以通过镜像安装
+	NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node nvm install v8.11.2
+	nvm use node #查看当前使用版本
+	nvm use v8.11.1 #切换node版本
+ubuntu安装wireshark
+	sudo apt-add-repository ppa:wireshark-dev/stable
+	sudo apt-get update
+	sudo apt-get install wireshark
+	sudo chgrp wireshark /usr/bin/dumpcap 更改dumpcap所属用户组，解决root权限
+	sudo chmod 4755 /usr/bin/dumpcap
+iptables使用
+	sudo vim /etc/sysctl.conf
+	将net.ipv4.ip_forward=1前面的#注释去掉，保存文件，然后执行sudo sysctl -p使其生效	
+	iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-ports 8080 #将本机80端口映射到8080端口
+	典型使用场景举例
+	场景一：目标机的22端口外网没有打开，通过本地端口转发实现通过其他端口访问ssh的22端口
+	案例：125.69.67.213机器的22端口未对外开放，但开放了3000~4000之间的端口，因此通过3000端口转发到22实现ssh登录
+	sudo iptables -t nat -A PREROUTING -p tcp -i eth0 -d 125.69.67.213 --dport 3000 -j DNAT --to 125.69.67.213:22
+	这个属于本机端A端口转发到本机的B端口
+
+	场景二：将内网的22端口映射到外网的一个端口，实现SSH直接登录，不用跳转
+	案例：192.168.2.61为外网机，192.168.2.70为内网机，如果不做映射，需要先登录到61，再登录到70.做如下映射之后，可直接通过外网机的3003登录到内网机
+	sudo iptables -t nat -A PREROUTING -d 192.168.2.61 -p tcp --dport 3003 -j DNAT --to-destination 192.168.2.70:22
+	sudo iptables -t nat -A POSTROUTING -d 192.168.2.70 -p tcp --dport 22 -j SNAT --to 192.168.2.61
+	注：(1) 本例中也可以通过SecureCRT的自动登录实现。
+
+	场景三：在外网直接访问内网的MySQL数据库
+	案例：很多时候数据库在内网机，外网不能直接访问，但做运维的时候可能需要通过图形界面工具直接连上去。做端口映射就可以解决这个问题。例如：将外网机192.168.2.61的3001端口转发到内网机192.168.2.70的MySQL的3306端口
+	sudo iptables -t nat -A PREROUTING -d 192.168.2.61 -p tcp --dport 3001 -j DNAT --to-destination 192.168.2.70:3306
+	sudo iptables -t nat -A POSTROUTING -d 192.168.2.70 -p tcp --dport 3306 -j SNAT --to 192.168.2.61	
+	sudo iptables -t nat --list #查看所有的iptables nat的信息
+	sudo iptables -t nat -D PREROUTING 1    //序号从1 开始，后边以此+1.
+pip安装
+	sudo apt-get install python3-pip
+

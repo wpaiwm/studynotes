@@ -1,0 +1,44 @@
+1.shiro怎么从配置文件获取当前subject对象
+	private static Subject getSubject() {
+		//加载配置文件，并获取工厂
+		Factory<SecurityManager> factory = new IniSecurityManagerFactory("classpath:shiro.ini");
+		//获取安全管理者实例
+		SecurityManager sm = factory.getInstance();
+		//将安全管理者放入全局对象
+		SecurityUtils.setSecurityManager(sm);
+		//全局对象通过安全管理者生成Subject对象
+		Subject subject = SecurityUtils.getSubject();
+
+		return subject;
+	}
+2.shiro获取到了当前subject对象怎么实现登录
+	private static boolean login(User user) {
+		Subject subject= getSubject();
+		//如果已经登录过了，退出
+		if(subject.isAuthenticated())
+			subject.logout();
+		
+		//封装用户的数据
+		UsernamePasswordToken token = new UsernamePasswordToken(user.getName(), user.getPassword());
+		try {
+			//将用户的数据token 最终传递到Realm中进行对比
+			subject.login(token);
+		} catch (AuthenticationException e) {
+			//验证错误
+			return false;
+		}				
+		
+		return subject.isAuthenticated();
+	}
+3.shiro获取到了当前subject对象，并登录了以后,怎么判断是否有权限
+	private static boolean isPermitted(String permit) {
+		Subject subject = getSubject();
+		return subject.isPermitted(permit);
+	}
+4.shiro获取到了当前subject对象，并登录了以后，怎么判断是否有角色
+	private static boolean hasRole(String role) {
+		Subject subject = getSubject();
+		return subject.hasRole(role);
+	}
+-------------------------上面代码是基于文本文件配置的---------------------------
+
