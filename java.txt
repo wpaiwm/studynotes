@@ -216,3 +216,7 @@
 	<!--      </bean> -->
 	     
 	</beans>
+6.java直接打印出对象里面的值
+	重写toString方法
+7.java直接打印出数组里的值
+	Arrays.toString(array)
