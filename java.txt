@@ -220,3 +220,18 @@
 	重写toString方法
 7.java直接打印出数组里的值
 	Arrays.toString(array)
+8.springboot配置静态资源目录
+	spring:
+		resources:
+    			#add-mappings: false
+    			static-locations: /static
+	add-mappings设成false会解析不出来index.html，慎用
+9.后端设置cookie
+	@GetMapping("/setCookies")
+    	public void setCookies(HttpServletResponse response){
+        	Cookie cookie=new Cookie("cookie","123456");
+        	cookie.setPath("/");   //
+        	cookie.setMaxAge(24*60*60);       //存活一天
+        	response.setHeader("Access-Control-Allow-Credentials", "true");
+        	response.addCookie(cookie);
+    	}

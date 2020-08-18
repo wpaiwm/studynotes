@@ -2,6 +2,8 @@ package com.cts;
 
 
 
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.cts.mapper.UserMapper;
 import com.cts.model.pojo.User;
 import com.cts.service.UserService;
@@ -24,6 +26,8 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.context.WebApplicationContext;
+
+import java.io.UnsupportedEncodingException;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration
@@ -68,12 +72,13 @@ public class CtsWebApplicationTests {
         user.setPassword("admin");
         String json = JsonConvertUtil.objectToJson(user);
         RequestBuilder request = MockMvcRequestBuilders.post("/login")
-                .accept(MediaType.APPLICATION_JSON)
-                .contentType(MediaType.APPLICATION_JSON_VALUE)
+                .accept(MediaType.APPLICATION_JSON_UTF8_VALUE)
+                .contentType(MediaType.APPLICATION_JSON_UTF8_VALUE)
                 .content(json);
-
         MvcResult mvcResult = mockMvc.perform(request).andReturn();
         int status = mvcResult.getResponse().getStatus();
+        String result = mvcResult.getResponse().getContentAsString();
+        System.out.println("返回体内容:" + result);
         System.out.println("返回状态码：" + status);
     }
 
