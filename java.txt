@@ -235,3 +235,37 @@
         	response.setHeader("Access-Control-Allow-Credentials", "true");
         	response.addCookie(cookie);
     	}
+10.Access-Control-Expose-Headers的含义
+	大意为:在涉及跨域请求时,response中大部分header需要源服务端同意才能拿到,所以需要在response中增加一个如下header:
+		Access-Control-Expose-Headers: content-type, cache, ...
+		其中"content-type, cache, ..."为允许跨域访问的header的key,多个时用英文逗号隔开
+
+11.setTimeout怎么实现防抖
+	//防抖函数就是一个在函数内部再生成一个函数返回出来，实际上给click绑定的就是返回出来的函数，和内部函数同级的变量就是相当于是一个全局变量，
+  	// 函数每一次执行都能访问到全局变量
+  	function debounce(func,wait){
+    		var TimeOut = null;
+    		console.log('test');
+    		return function(){
+      			if(TimeOut != null) clearTimeout(TimeOut);
+      			TimeOut = setTimeout(func,wait);
+    		}
+  	}
+  	function handle(){
+    		console.log(Math.random())
+  	}
+  	document.getElementById("btnClick").addEventListener("click",debounce(handle,1000))
+12.setTimeout怎么实现节流
+	 function  throttle(func,delay){
+   		var timer = null;
+    		return function (){
+      			var context = this;
+      			var args = arguments;
+      			if(timer == null){
+        			timer = setTimeout(function(){
+          			func.apply(context,args);
+          			timer = null
+        			},delay);
+      			}
+    		}
+  	}	
